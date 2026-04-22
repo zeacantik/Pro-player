@@ -1,54 +1,31 @@
 {
-  "id": "./",
   "name": "JOKI.VEST",
   "short_name": "JOKI.VEST",
-  "description": "Aplikasi JOKI Game terpercaya.",
-  "start_url": "./index.html",
-  "scope": "./",
+  "description": "Platform joki Mobile Legends terpercaya untuk rank boost, savage, dan gendong Mythic",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "theme_color": "#0A1128",
+  "background_color": "#0A1128",
   "orientation": "portrait",
-  "lang": "id",
+  "scope": "/",
   "icons": [
     {
       "src": "icons/icon-192x192.png",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     },
     {
       "src": "icons/icon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
-  ],
-  "screenshots": [
-    {
-      "src": "icons/screenshot1.png",
-      "sizes": "1080x1920",
-      "type": "image/png"
-    },
-    {
-      "src": "icons/screenshot2.png",
-      "sizes": "1080x1920",
-      "type": "image/png"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Buka Beranda",
-      "short_name": "Home",
-      "url": "./index.html",
-      "icons": [
-        {
-          "src": "icons/icon-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
-    }
-  ],
-  "categories": [
-    "productivity",
-    "utilities"
   ]
 }

@@ -1,664 +1,676 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>JOKI.VEST - Platform Joki Mobile Legends Terpercaya</title>
-    <!-- Bootstrap 5 + Icons + Fonts -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Google Fonts: Orbitron & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- AOS library untuk animasi scroll halus -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0A1128" />
+  <meta name="description" content="Platform joki Mobile Legends terpercaya untuk rank boost, savage, dan gendong Mythic">
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icons" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2300B4D8'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='%230A1128' font-weight='bold'%3EJV%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2300B4D8'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='%230A1128' font-weight='bold'%3EJV%3C/text%3E%3C/svg%3E">
+  <title>JOKI.VEST - Platform Joki Mobile Legends</title>
+  
+  <!-- Bootstrap 5 + Icons + Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Fonts: Orbitron & Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            background-color: #0A1128; /* Navy deep void */
-            font-family: 'Inter', sans-serif;
-            color: #E0F7FA;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
+    body {
+      background-color: #0A1128;
+      font-family: 'Inter', sans-serif;
+      color: #E0F7FA;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 5px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #101935;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #00B4D8;
-            border-radius: 10px;
-        }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #101935;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #00B4D8;
+      border-radius: 10px;
+    }
 
-        /* Typography gaming style */
-        h1, h2, h3, .gaming-font {
-            font-family: 'Orbitron', monospace;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
+    /* Typography gaming style */
+    h1, h2, h3, .gaming-font {
+      font-family: 'Orbitron', monospace;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
 
-        /* Neon glow effect */
-        .neon-glow {
-            transition: all 0.2s ease;
-        }
-        .neon-glow:hover, .neon-active {
-            box-shadow: 0 0 12px rgba(0, 180, 216, 0.6);
-            border-color: #00F5FF !important;
-        }
+    /* Card styling */
+    .vendor-card {
+      background: #101935;
+      border-radius: 20px;
+      border: 1px solid #1E2A47;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+    .vendor-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      border-color: #00B4D8;
+    }
 
-        /* Card styling */
-        .vendor-card {
-            background: #101935;
-            border-radius: 20px;
-            border: 1px solid #1E2A47;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            cursor: pointer;
-        }
-        .vendor-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-            border-color: #00B4D8;
-        }
+    /* Category pills */
+    .category-pill {
+      background: #101935;
+      border: 1px solid #2A3A6A;
+      border-radius: 60px;
+      padding: 12px 20px;
+      transition: all 0.2s;
+      cursor: pointer;
+      text-align: center;
+    }
+    .category-pill.active {
+      background: #00B4D8;
+      border-color: #00F5FF;
+      color: #0A1128;
+      box-shadow: 0 0 12px #00B4D8;
+    }
+    .category-pill i {
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+      display: block;
+    }
 
-        /* Category pills */
-        .category-pill {
-            background: #101935;
-            border: 1px solid #2A3A6A;
-            border-radius: 60px;
-            padding: 12px 20px;
-            transition: all 0.2s;
-            cursor: pointer;
-            text-align: center;
-        }
-        .category-pill.active {
-            background: #00B4D8;
-            border-color: #00F5FF;
-            color: #0A1128;
-            box-shadow: 0 0 12px #00B4D8;
-        }
-        .category-pill i {
-            font-size: 1.6rem;
-            margin-bottom: 6px;
-            display: block;
-        }
+    /* floating whatsapp */
+    .fab-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 20px;
+      background: #25D366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 999;
+      cursor: pointer;
+      transition: 0.2s;
+      animation: pulse-wa 1.8s infinite;
+    }
+    .fab-wa:hover {
+      transform: scale(1.05);
+      background: #128C7E;
+    }
+    @keyframes pulse-wa {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
 
-        /* floating whatsapp */
-        .fab-wa {
-            position: fixed;
-            bottom: 25px;
-            right: 20px;
-            background: #25D366;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 28px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            z-index: 999;
-            cursor: pointer;
-            transition: 0.2s;
-            animation: pulse-wa 1.8s infinite;
-        }
-        .fab-wa:hover {
-            transform: scale(1.05);
-            background: #128C7E;
-        }
-        @keyframes pulse-wa {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-            70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
+    /* skeleton loader */
+    .skeleton-card {
+      background: #1A2245;
+      border-radius: 20px;
+      height: 210px;
+      animation: pulse 1.2s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
 
-        /* skeleton loader */
-        .skeleton-card {
-            background: #1A2245;
-            border-radius: 20px;
-            height: 210px;
-            animation: pulse 1.2s infinite ease-in-out;
-        }
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
-        }
+    /* toast custom */
+    .custom-toast {
+      position: fixed;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      background: #00B4D8;
+      color: #0A1128;
+      padding: 10px 20px;
+      border-radius: 40px;
+      font-weight: bold;
+      z-index: 1050;
+      opacity: 0;
+      transition: 0.2s;
+      pointer-events: none;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .custom-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
 
-        /* sticky header comparison */
-        .sticky-compare-header {
-            position: sticky;
-            top: 70px;
-            background: #0A1128cc;
-            backdrop-filter: blur(12px);
-            z-index: 100;
-            padding: 12px 0;
-            border-bottom: 1px solid #00B4D8;
-        }
+    /* rating stars */
+    .star-rating {
+      color: #FFD966;
+    }
 
-        /* toast custom */
-        .custom-toast {
-            position: fixed;
-            bottom: 90px;
-            left: 50%;
-            transform: translateX(-50%) scale(0.9);
-            background: #00B4D8;
-            color: #0A1128;
-            padding: 10px 20px;
-            border-radius: 40px;
-            font-weight: bold;
-            z-index: 1050;
-            opacity: 0;
-            transition: 0.2s;
-            pointer-events: none;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-        .custom-toast.show {
-            opacity: 1;
-            transform: translateX(-50%) scale(1);
-        }
+    .btn-neon {
+      background: #00B4D8;
+      border: none;
+      color: #0A1128;
+      font-weight: 700;
+      border-radius: 40px;
+      transition: 0.2s;
+    }
+    .btn-neon:hover {
+      background: #00F5FF;
+      transform: scale(0.98);
+      color: #000;
+    }
 
-        /* rating stars */
-        .star-rating {
-            color: #FFD966;
-        }
+    .btn-outline-neon {
+      background: transparent;
+      border: 2px solid #00B4D8;
+      color: #00B4D8;
+      border-radius: 40px;
+    }
+    .btn-outline-neon:hover {
+      background: #00B4D8;
+      color: #0A1128;
+    }
 
-        .offline-badge {
-            background: #FFB347;
-            color: #0A1128;
-            border-radius: 30px;
-            font-size: 0.7rem;
-        }
+    a {
+      text-decoration: none;
+    }
 
-        .btn-neon {
-            background: #00B4D8;
-            border: none;
-            color: #0A1128;
-            font-weight: 700;
-            border-radius: 40px;
-            transition: 0.2s;
-        }
-        .btn-neon:hover {
-            background: #00F5FF;
-            transform: scale(0.98);
-            color: #000;
-        }
+    /* transisi page */
+    .page-transition {
+      animation: fadeSlideUp 0.3s ease-out;
+    }
+    @keyframes fadeSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        .btn-outline-neon {
-            background: transparent;
-            border: 2px solid #00B4D8;
-            color: #00B4D8;
-            border-radius: 40px;
-        }
-        .btn-outline-neon:hover {
-            background: #00B4D8;
-            color: #0A1128;
-        }
+    footer {
+      border-top: 1px solid #1E2A47;
+    }
 
-        a {
-            text-decoration: none;
-        }
+    /* Header background spot untuk gambar */
+    .hero-background-spot {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      margin-bottom: 28px;
+      background: #07112e;
+      background-image: url('https://wallpapers.com/images/featured/mobile-legends-background-9z5n7q259t1tpfjb.jpg');
+      background-size: cover;
+      background-position: center 30%;
+      background-repeat: no-repeat;
+      transition: all 0.3s;
+      min-height: 180px;
+    }
+    
+    .hero-background-spot:not([style*="background-image"]):before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 10% 20%, rgba(0,180,216,0.15) 0%, #0A1128 90%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(135deg, rgba(10,17,40,0.75) 0%, rgba(0,20,40,0.6) 100%);
+      backdrop-filter: blur(2px);
+      border-radius: 28px;
+      padding: 28px 24px;
+    }
+    
+    .hero-background-spot.has-bg .hero-overlay {
+      background: linear-gradient(95deg, rgba(10,17,40,0.8) 0%, rgba(0,30,50,0.65) 100%);
+    }
+    
+    .bg-hint {
+      position: absolute;
+      bottom: 12px;
+      right: 16px;
+      z-index: 3;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      font-size: 11px;
+      border-radius: 20px;
+      padding: 4px 12px;
+      pointer-events: none;
+      color: #90A4AE;
+    }
+    
+    @media (max-width: 576px) {
+      .category-pill i {
+        font-size: 1.3rem;
+      }
+      .category-pill span {
+        font-size: 0.75rem;
+      }
+      .hero-overlay {
+        padding: 20px 16px;
+      }
+      .hero-background-spot {
+        min-height: 150px;
+      }
+    }
 
-        /* transisi page */
-        .page-transition {
-            animation: fadeSlideUp 0.3s ease-out;
-        }
-        @keyframes fadeSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        footer {
-            border-top: 1px solid #1E2A47;
-        }
-
-        /* ========= HEADER BACKGROUND SPOT (untuk gambar background) ========= */
-        .hero-background-spot {
-            position: relative;
-            border-radius: 28px;
-            overflow: hidden;
-            margin-bottom: 28px;
-            background: #07112e; /* fallback warna gelap */
-            /* Area kosong untuk background image - Anda bisa mengganti URL gambar di bawah */
-            background-image: url('https://wallpapers.com/images/featured/mobile-legends-background-9z5n7q259t1tpfjb.jpg'); /* KOSONGKAN, SILAHKAN ISI SENDIRI */
-            background-size: cover;
-            background-position: center 30%;
-            background-repeat: no-repeat;
-            transition: all 0.3s;
-            min-height: 180px;
-        }
-        
-        /* Jika tidak ada gambar, tampilkan efek gradien + pola samar */
-        .hero-background-spot:not([style*="background-image"]):before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 10% 20%, rgba(0,180,216,0.15) 0%, #0A1128 90%);
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        /* overlay gelap untuk keterbacaan teks jika background terang nanti */
-        .hero-overlay {
-            position: relative;
-            z-index: 2;
-            background: linear-gradient(135deg, rgba(10,17,40,0.75) 0%, rgba(0,20,40,0.6) 100%);
-            backdrop-filter: blur(2px);
-            border-radius: 28px;
-            padding: 28px 24px;
-        }
-        
-        /* jika gambar background sudah diisi, overlay tetap membantu readability */
-        .hero-background-spot.has-bg .hero-overlay {
-            background: linear-gradient(95deg, rgba(10,17,40,0.8) 0%, rgba(0,30,50,0.65) 100%);
-        }
-        
-        /* tombol edit placeholder sederhana (hanya indikator) */
-        .bg-hint {
-            position: absolute;
-            bottom: 12px;
-            right: 16px;
-            z-index: 3;
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(4px);
-            font-size: 11px;
-            border-radius: 20px;
-            padding: 4px 12px;
-            pointer-events: none;
-            color: #90A4AE;
-        }
-        
-        @media (max-width: 576px) {
-            .category-pill i {
-                font-size: 1.3rem;
-            }
-            .category-pill span {
-                font-size: 0.75rem;
-            }
-            .hero-overlay {
-                padding: 20px 16px;
-            }
-            .hero-background-spot {
-                min-height: 150px;
-            }
-        }
-    </style>
+    /* loading spinner untuk transisi halaman */
+    .page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0A1128;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.3s;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .page-loader.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .loader-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #1E2A47;
+      border-top: 4px solid #00B4D8;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- Main App -->
-<div class="container-fluid px-3 px-md-4 py-3" id="appRoot">
+  <!-- Page Loader untuk transisi -->
+  <div id="pageLoader" class="page-loader">
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Main App -->
+  <div class="container-fluid px-3 px-md-4 py-3" id="appRoot">
     
-    <!-- ========= HEADER DENGAN BACKGROUND SPOT KOSONG UNTUK GAMBAR ========= -->
+    <!-- Header dengan background spot kosong untuk gambar -->
     <div class="hero-background-spot" id="heroBgSpot">
-        <div class="hero-overlay">
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="d-flex align-items-center gap-2">
-                    <i class="bi bi-shield-shaded fs-2" style="color:#00F5FF"></i>
-                    <h1 class="fs-3 m-0 gaming-font">JOKI.<span style="color:#00F5FF">VEST</span></h1>
-                </div>
-                <div>
-                    <i class="bi bi-person-circle fs-3" style="color:#90A4AE" id="profileBtn"></i>
-                </div>
-            </div>
-            
-            <!-- Hero Greeting yang lebih menarik -->
-            <div class="mt-3 mt-md-4 text-center text-md-start" data-aos="fade-up">
-                <h2 class="fw-bold" style="font-size:1.9rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5);">Pusing Mikirin Rank? <br> Temukan Joki Terbaikmu di Sini</h2>
-                <p class="text-info-emphasis" style="color:#B3E5FC">Kami kurasi, Anda yang pilih.</p>
-            </div>
+      <div class="hero-overlay">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-shield-shaded fs-2" style="color:#00F5FF"></i>
+            <h1 class="fs-3 m-0 gaming-font">JOKI.<span style="color:#00F5FF">VEST</span></h1>
+          </div>
+          <div>
+            <i class="bi bi-person-circle fs-3" style="color:#90A4AE" id="profileBtn" role="button"></i>
+          </div>
         </div>
-        <div class="bg-hint"><i class="bi bi-image"></i> </div>
+        
+        <div class="mt-3 mt-md-4 text-center text-md-start" data-aos="fade-up">
+          <h2 class="fw-bold" style="font-size:1.9rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5);">Pusing Mikirin Rank? <br> Temukan Joki Terbaikmu di Sini</h2>
+          <p class="text-info-emphasis" style="color:#B3E5FC">Kami kurasi, Anda yang pilih.</p>
+        </div>
+      </div>
+      <div class="bg-hint"><i class="bi bi-image"></i> Spot gambar background (kosong, isi sendiri)</div>
     </div>
-    <!-- ========= AKHIR HEADER BACKGROUND SPOT ========= -->
 
     <!-- Smart Filter Widget -->
     <div class="mb-5" data-aos="fade-up" data-aos-delay="50">
-        <label class="fw-semibold mb-3"><i class="bi bi-robot"></i> Apa Goal Kamu Hari Ini?</label>
-        <div class="row g-3" id="categoryContainer">
-            <div class="col-6 col-md-3">
-                <div class="category-pill" data-category="rank">
-                    <i class="bi bi-trophy-fill"></i>
-                    <span>Push Rank</span>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="category-pill" data-category="savage">
-                    <i class="bi bi-sword"></i>
-                    <span>Konten Savage</span>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="category-pill" data-category="global">
-                    <i class="bi bi-crown-fill"></i>
-                    <span>Global/Supreme</span>
-                </div>
-            </div>
-            <div class="col-6 col-md-3">
-                <div class="category-pill" data-category="gendong">
-                    <i class="bi bi-people-fill"></i>
-                    <span>Gendong Mythic</span>
-                </div>
-            </div>
+      <label class="fw-semibold mb-3"><i class="bi bi-robot"></i> Apa Goal Kamu Hari Ini?</label>
+      <div class="row g-3" id="categoryContainer">
+        <div class="col-6 col-md-3">
+          <div class="category-pill" data-category="rank">
+            <i class="bi bi-trophy-fill"></i>
+            <span>Push Rank</span>
+          </div>
         </div>
-        <div class="text-center mt-4" id="floatingBtnContainer" style="min-height: 60px;">
-            <!-- floating action muncul setelah pilih kategori -->
+        <div class="col-6 col-md-3">
+          <div class="category-pill" data-category="savage">
+            <i class="bi bi-sword"></i>
+            <span>Konten Savage</span>
+          </div>
         </div>
+        <div class="col-6 col-md-3">
+          <div class="category-pill" data-category="global">
+            <i class="bi bi-crown-fill"></i>
+            <span>Global/Supreme</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="category-pill" data-category="gendong">
+            <i class="bi bi-people-fill"></i>
+            <span>Gendong Mythic</span>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4" id="floatingBtnContainer" style="min-height: 60px;"></div>
     </div>
 
     <!-- Rekomendasi Vendor + Price Comparison Section -->
     <div id="vendorSection">
-        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
-            <h4 class="gaming-font"><i class="bi bi-graph-up"></i> Rekomendasi Joki Terbaik</h4>
-            <small class="text-info" id="selectedCatLabel">Pilih kategori di atas</small>
-        </div>
-        <div id="vendorList" class="row g-4">
-            <!-- skeleton loader akan tampil -->
-        </div>
+      <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+        <h4 class="gaming-font"><i class="bi bi-graph-up"></i> Rekomendasi Joki Terbaik</h4>
+        <small class="text-info" id="selectedCatLabel">Pilih kategori di atas</small>
+      </div>
+      <div id="vendorList" class="row g-4"></div>
     </div>
 
     <!-- Blog / Update Meta Ringan -->
     <div class="mt-5 pt-3" data-aos="fade-up">
-        <div class="d-flex align-items-center gap-2 mb-3">
-            <i class="bi bi-newspaper fs-4" style="color:#00B4D8"></i>
-            <h5 class="m-0">Meta Update & Tips</h5>
-        </div>
-        <div class="bg-dark p-3 rounded-4" style="background:#0F172F!important">
-            <p class="mb-1"><i class="bi bi-patch-check-fill text-info"></i> <strong>Patch Notes MLBB: Hero Terbaru</strong> – Harga joki mungkin naik! Simak update biar aman.</p>
-            <p class="small text-secondary">Tips: Gunakan mode "Safe Boost" untuk hindari banned. Selalu ubah password setelah joki selesai.</p>
-        </div>
+      <div class="d-flex align-items-center gap-2 mb-3">
+        <i class="bi bi-newspaper fs-4" style="color:#00B4D8"></i>
+        <h5 class="m-0">Meta Update & Tips</h5>
+      </div>
+      <div class="bg-dark p-3 rounded-4" style="background:#0F172F!important">
+        <p class="mb-1"><i class="bi bi-patch-check-fill text-info"></i> <strong>Patch Notes MLBB: Hero Terbaru</strong> – Harga joki mungkin naik! Simak update biar aman.</p>
+        <p class="small text-secondary">Tips: Gunakan mode "Safe Boost" untuk hindari banned. Selalu ubah password setelah joki selesai.</p>
+      </div>
     </div>
 
     <!-- Footer dengan trust-meter -->
     <footer class="mt-5 pt-4 pb-3 text-center">
-        <div class="d-flex justify-content-center gap-4 flex-wrap">
-            <span><i class="bi bi-shield-check text-info"></i> Verified Vendor</span>
-            <span><i class="bi bi-lightning-charge text-info"></i> Fast Response 99%</span>
-            <span><i class="bi bi-shield-lock-fill text-info"></i> Anti-Ban Guarantee</span>
-        </div>
-        <p class="text-secondary-emphasis mt-3 small">&copy; 2025 JOKI.VEST — Platform Joki Terpercaya</p>
+      <div class="d-flex justify-content-center gap-4 flex-wrap">
+        <span><i class="bi bi-shield-check text-info"></i> Verified Vendor</span>
+        <span><i class="bi bi-lightning-charge text-info"></i> Fast Response 99%</span>
+        <span><i class="bi bi-shield-lock-fill text-info"></i> Anti-Ban Guarantee</span>
+      </div>
+      <p class="text-secondary-emphasis mt-3 small">&copy; 2025 JOKI.VEST — Platform Joki Terpercaya</p>
     </footer>
-</div>
+  </div>
 
-<!-- Floating WhatsApp FAB -->
-<div class="fab-wa" id="waFab">
+  <!-- Floating WhatsApp FAB -->
+  <div class="fab-wa" id="waFab">
     <i class="bi bi-whatsapp"></i>
-</div>
-<div id="toastMsg" class="custom-toast">✅ Tersalin! Hubungi vendor via WA</div>
+  </div>
+  <div id="toastMsg" class="custom-toast">✅ Tersalin! Hubungi vendor via WA</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 600, once: true });
-
+  <script>
     // ======================== DATA VENDOR (aggregator) =======================
     const vendorsDB = {
-        rank: [
-            { id: 1, name: "TAKAPEDIA", tag: "Verified", pricePerStar: 10000, speed: "Sangat Cepat (1-2 Hari)", rating: 4.9, reviewCount: 1200, guarantee: "Anti-Ban + Garansi", waLink: "https://wa.me/628123456789?text=Halo%20saya%20dari%20JOKI.VEST%2C%20ingin%20order%20joki%20kategori%20Push%20Rank", featured: true },
-            { id: 2, name: "ACURSIO", tag: "Fast Response", pricePerStar: 8500, speed: "Cepat (2-3 Hari)", rating: 4.7, reviewCount: 890, guarantee: "Winrate 90%", waLink: "https://wa.me/628987654321?text=Halo%20saya%20dari%20JOKI.VEST%2C%20order%20Push%20Rank" },
-            { id: 3, name: "GODLIKE BOOST", tag: "Pro Player", pricePerStar: 12000, speed: "Express (12 Jam)", rating: 5.0, reviewCount: 450, guarantee: "Live Streaming", waLink: "https://wa.me/628555123456?text=Halo%20saya%20dari%20JOKI.VEST%2C%20butuh%20boost%20cepat" }
-        ],
-        savage: [
-            { id: 4, name: "SAVAGE MASTER", tag: "Savage Specialist", pricePerSavage: 250000, speed: "1 Hari jadi", rating: 4.8, reviewCount: 340, guarantee: "Video Replay", waLink: "https://wa.me/628111222333?text=Halo%20JOKI.VEST%2C%20pesan%20joki%20Konten%20Savage" },
-            { id: 5, name: "GOLD LANE ID", tag: "MM Main", pricePerSavage: 210000, speed: "Cepat (Sameday)", rating: 4.6, reviewCount: 210, guarantee: "Manual", waLink: "https://wa.me/628444555666?text=Order%20Savage%20via%20JOKI.VEST" }
-        ],
-        global: [
-            { id: 6, name: "SUPREME HUNTER", tag: "Global Top", pricePerStar: 25000, speed: "Prioritas Tinggi", rating: 4.95, reviewCount: 602, guarantee: "Supreme Rank", waLink: "https://wa.me/628777888999?text=JOKI.VEST%20Global%20Supreme" }
-        ],
-        gendong: [
-            { id: 7, name: "MYTHIC CARRIER", tag: "Gendong Jago", pricePerGame: 35000, speed: "Siap Mabar", rating: 4.85, reviewCount: 1100, guarantee: "Win 90%", waLink: "https://wa.me/628666777888?text=Halo%20saya%20ingin%20gendong%20Mythic" },
-            { id: 8, name: "DUO PRO", tag: "Mabar Cepat", pricePerGame: 30000, speed: "Respons Cepat", rating: 4.7, reviewCount: 543, guarantee: "Fleksibel", waLink: "https://wa.me/628999000111?text=Gendong%20Mythic%20via%20JOKI.VEST" }
-        ]
+      rank: [
+        { id: 1, name: "TAKAPEDIA", tag: "Verified", pricePerStar: 10000, speed: "Sangat Cepat (1-2 Hari)", rating: 4.9, reviewCount: 1200, guarantee: "Anti-Ban + Garansi", waLink: "https://wa.me/628123456789?text=Halo%20saya%20dari%20JOKI.VEST%2C%20ingin%20order%20joki%20kategori%20Push%20Rank" },
+        { id: 2, name: "ACURSIO", tag: "Fast Response", pricePerStar: 8500, speed: "Cepat (2-3 Hari)", rating: 4.7, reviewCount: 890, guarantee: "Winrate 90%", waLink: "https://wa.me/628987654321?text=Halo%20saya%20dari%20JOKI.VEST%2C%20order%20Push%20Rank" },
+        { id: 3, name: "GODLIKE BOOST", tag: "Pro Player", pricePerStar: 12000, speed: "Express (12 Jam)", rating: 5.0, reviewCount: 450, guarantee: "Live Streaming", waLink: "https://wa.me/628555123456?text=Halo%20saya%20dari%20JOKI.VEST%2C%20butuh%20boost%20cepat" }
+      ],
+      savage: [
+        { id: 4, name: "SAVAGE MASTER", tag: "Savage Specialist", pricePerSavage: 250000, speed: "1 Hari jadi", rating: 4.8, reviewCount: 340, guarantee: "Video Replay", waLink: "https://wa.me/628111222333?text=Halo%20JOKI.VEST%2C%20pesan%20joki%20Konten%20Savage" },
+        { id: 5, name: "GOLD LANE ID", tag: "MM Main", pricePerSavage: 210000, speed: "Cepat (Sameday)", rating: 4.6, reviewCount: 210, guarantee: "Manual", waLink: "https://wa.me/628444555666?text=Order%20Savage%20via%20JOKI.VEST" }
+      ],
+      global: [
+        { id: 6, name: "SUPREME HUNTER", tag: "Global Top", pricePerStar: 25000, speed: "Prioritas Tinggi", rating: 4.95, reviewCount: 602, guarantee: "Supreme Rank", waLink: "https://wa.me/628777888999?text=JOKI.VEST%20Global%20Supreme" }
+      ],
+      gendong: [
+        { id: 7, name: "MYTHIC CARRIER", tag: "Gendong Jago", pricePerGame: 35000, speed: "Siap Mabar", rating: 4.85, reviewCount: 1100, guarantee: "Win 90%", waLink: "https://wa.me/628666777888?text=Halo%20saya%20ingin%20gendong%20Mythic" },
+        { id: 8, name: "DUO PRO", tag: "Mabar Cepat", pricePerGame: 30000, speed: "Respons Cepat", rating: 4.7, reviewCount: 543, guarantee: "Fleksibel", waLink: "https://wa.me/628999000111?text=Gendong%20Mythic%20via%20JOKI.VEST" }
+      ]
     };
 
-    // mapping untuk display harga (sesuai kategori)
     let activeCategory = null;
     let currentVendors = [];
 
-    // DOM elements
     const vendorContainer = document.getElementById('vendorList');
     const floatingBtnContainer = document.getElementById('floatingBtnContainer');
     const selectedCatLabel = document.getElementById('selectedCatLabel');
     const categoryPills = document.querySelectorAll('.category-pill');
+    const pageLoader = document.getElementById('pageLoader');
 
-    // helper: get price label
+    function showPageLoader() {
+      pageLoader.classList.add('show');
+    }
+    function hidePageLoader() {
+      pageLoader.classList.remove('show');
+    }
+
     function getPriceLabel(vendor, cat) {
-        if(cat === 'rank') return `Rp ${vendor.pricePerStar.toLocaleString()} / Bintang`;
-        if(cat === 'savage') return `Rp ${vendor.pricePerSavage.toLocaleString()} / Savage`;
-        if(cat === 'global') return `Rp ${vendor.pricePerStar.toLocaleString()} / Bintang`;
-        if(cat === 'gendong') return `Rp ${vendor.pricePerGame.toLocaleString()} / Game`;
-        return 'Custom';
+      if(cat === 'rank') return `Rp ${vendor.pricePerStar.toLocaleString()} / Bintang`;
+      if(cat === 'savage') return `Rp ${vendor.pricePerSavage.toLocaleString()} / Savage`;
+      if(cat === 'global') return `Rp ${vendor.pricePerStar.toLocaleString()} / Bintang`;
+      if(cat === 'gendong') return `Rp ${vendor.pricePerGame.toLocaleString()} / Game`;
+      return 'Custom';
     }
 
-    // skeleton loading
     function showSkeleton() {
-        vendorContainer.innerHTML = `
-            <div class="col-12"><div class="skeleton-card"></div></div>
-            <div class="col-12"><div class="skeleton-card"></div></div>
-            <div class="col-12"><div class="skeleton-card"></div></div>
-        `;
+      vendorContainer.innerHTML = `
+        <div class="col-12"><div class="skeleton-card"></div></div>
+        <div class="col-12"><div class="skeleton-card"></div></div>
+        <div class="col-12"><div class="skeleton-card"></div></div>
+      `;
     }
 
-    // render vendor card berdasarkan kategori
-    function renderVendors(category) {
-        showSkeleton();
-        setTimeout(() => {
-            let vendors = [...(vendorsDB[category] || [])];
-            if(vendors.length === 0) {
-                vendorContainer.innerHTML = `<div class="col-12 text-center py-5"><i class="bi bi-emoji-frown fs-1"></i><p class="mt-2">Maaf, kriteria joki belum tersedia. Coba kriteria lain?</p></div>`;
-                return;
-            }
-            currentVendors = vendors;
-            let html = '';
-            vendors.forEach(v => {
-                let priceText = getPriceLabel(v, category);
-                let starFull = Math.floor(v.rating);
-                let starHalf = (v.rating % 1) >= 0.5 ? 1 : 0;
-                let starEmpty = 5 - starFull - starHalf;
-                let stars = '';
-                for(let i=0;i<starFull;i++) stars += '<i class="bi bi-star-fill"></i>';
-                if(starHalf) stars += '<i class="bi bi-star-half"></i>';
-                for(let i=0;i<starEmpty;i++) stars += '<i class="bi bi-star"></i>';
-                html += `
-                    <div class="col-12" data-aos="fade-up">
-                        <div class="vendor-card p-3 p-md-4">
-                            <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                <div>
-                                    <h5 class="fw-bold mb-1">${v.name} <span class="badge bg-info text-dark ms-2">${v.tag}</span></h5>
-                                    <div class="small text-secondary">${v.guarantee || 'Trusted'}</div>
-                                </div>
-                                <div class="text-end">
-                                    <div class="star-rating fs-6">${stars} ${v.rating}</div>
-                                    <small>(${v.reviewCount} review)</small>
-                                </div>
-                            </div>
-                            <hr class="bg-secondary">
-                            <div class="row g-2 align-items-center">
-                                <div class="col-6">
-                                    <div class="fw-bold fs-5" style="color:#00F5FF">${priceText}</div>
-                                    <small><i class="bi bi-clock"></i> ${v.speed}</small>
-                                </div>
-                                <div class="col-6 text-end">
-                                    <button class="btn btn-neon px-4 orderBtn" data-walink="${v.waLink}" data-vendor="${v.name}" data-cat="${category}">ORDER SEKARANG <i class="bi bi-arrow-right-short"></i></button>
-                                </div>
-                            </div>
-                            <div class="mt-2 small"><i class="bi bi-shield-check text-info"></i> Joki Trust-Meter: <strong>${v.tag === 'Verified' ? '100% Aman' : (v.guarantee ? 'Terpercaya' : 'Standar')}</strong></div>
-                        </div>
-                    </div>
-                `;
-            });
-            vendorContainer.innerHTML = html;
-            // attach event listeners ke tombol order
-            document.querySelectorAll('.orderBtn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    const waLink = btn.getAttribute('data-walink');
-                    const vendorName = btn.getAttribute('data-vendor');
-                    const catLabel = btn.getAttribute('data-cat');
-                    // deep linking ke whatsapp dengan template otomatis
-                    let finalLink = waLink;
-                    if(!finalLink.includes('text=')) {
-                        finalLink += `?text=Halo%20saya%20dari%20JOKI.VEST%2C%20ingin%20order%20joki%20kategori%20${encodeURIComponent(catLabel)}%20di%20${encodeURIComponent(vendorName)}`;
-                    }
-                    window.open(finalLink, '_blank');
-                    // haptic feedback (getaran singkat jika support)
-                    if(navigator.vibrate) navigator.vibrate(50);
-                    showToast(`Membuka chat ${vendorName}...`);
-                    saveRecentlyViewed(vendorName);
-                });
-            });
-        }, 300);
-    }
-
-    // show toast message
     function showToast(msg) {
-        const toastEl = document.getElementById('toastMsg');
-        toastEl.textContent = msg;
-        toastEl.classList.add('show');
-        setTimeout(() => toastEl.classList.remove('show'), 2000);
+      const toastEl = document.getElementById('toastMsg');
+      toastEl.textContent = msg;
+      toastEl.classList.add('show');
+      setTimeout(() => toastEl.classList.remove('show'), 2000);
     }
 
-    // aktifkan kategori & tampilkan rekomendasi
-    function setActiveCategory(category) {
-        activeCategory = category;
-        // update tampilan pill
-        categoryPills.forEach(pill => {
-            if(pill.getAttribute('data-category') === category) {
-                pill.classList.add('active');
-            } else {
-                pill.classList.remove('active');
+    function saveRecentlyViewed(vendorName) {
+      let recents = JSON.parse(localStorage.getItem('jokivest_recents') || '[]');
+      recents = [vendorName, ...recents.filter(v => v !== vendorName)].slice(0, 3);
+      localStorage.setItem('jokivest_recents', JSON.stringify(recents));
+      let recentDiv = document.getElementById('recentViewWidget');
+      if(!recentDiv){
+        const newDiv = document.createElement('div');
+        newDiv.id = 'recentViewWidget';
+        newDiv.className = 'mb-3 small text-secondary';
+        document.getElementById('vendorSection').insertAdjacentElement('beforebegin', newDiv);
+        recentDiv = newDiv;
+      }
+      if(recents.length) recentDiv.innerHTML = `<i class="bi bi-eye"></i> Terakhir kamu lihat: ${recents.join(', ')}`;
+      else recentDiv.innerHTML = '';
+    }
+
+    function renderVendors(category) {
+      showSkeleton();
+      setTimeout(() => {
+        let vendors = [...(vendorsDB[category] || [])];
+        if(vendors.length === 0) {
+          vendorContainer.innerHTML = `<div class="col-12 text-center py-5"><i class="bi bi-emoji-frown fs-1"></i><p class="mt-2">Maaf, kriteria joki belum tersedia. Coba kriteria lain?</p></div>`;
+          return;
+        }
+        currentVendors = vendors;
+        let html = '';
+        vendors.forEach(v => {
+          let priceText = getPriceLabel(v, category);
+          let starFull = Math.floor(v.rating);
+          let starHalf = (v.rating % 1) >= 0.5 ? 1 : 0;
+          let starEmpty = 5 - starFull - starHalf;
+          let stars = '';
+          for(let i=0;i<starFull;i++) stars += '<i class="bi bi-star-fill"></i>';
+          if(starHalf) stars += '<i class="bi bi-star-half"></i>';
+          for(let i=0;i<starEmpty;i++) stars += '<i class="bi bi-star"></i>';
+          html += `
+            <div class="col-12" data-aos="fade-up">
+              <div class="vendor-card p-3 p-md-4">
+                <div class="d-flex justify-content-between align-items-start flex-wrap">
+                  <div>
+                    <h5 class="fw-bold mb-1">${v.name} <span class="badge bg-info text-dark ms-2">${v.tag}</span></h5>
+                    <div class="small text-secondary">${v.guarantee || 'Trusted'}</div>
+                  </div>
+                  <div class="text-end">
+                    <div class="star-rating fs-6">${stars} ${v.rating}</div>
+                    <small>(${v.reviewCount} review)</small>
+                  </div>
+                </div>
+                <hr class="bg-secondary">
+                <div class="row g-2 align-items-center">
+                  <div class="col-6">
+                    <div class="fw-bold fs-5" style="color:#00F5FF">${priceText}</div>
+                    <small><i class="bi bi-clock"></i> ${v.speed}</small>
+                  </div>
+                  <div class="col-6 text-end">
+                    <button class="btn btn-neon px-4 orderBtn" data-walink="${v.waLink}" data-vendor="${v.name}" data-cat="${category}">ORDER SEKARANG <i class="bi bi-arrow-right-short"></i></button>
+                  </div>
+                </div>
+                <div class="mt-2 small"><i class="bi bi-shield-check text-info"></i> Joki Trust-Meter: <strong>${v.tag === 'Verified' ? '100% Aman' : (v.guarantee ? 'Terpercaya' : 'Standar')}</strong></div>
+              </div>
+            </div>
+          `;
+        });
+        vendorContainer.innerHTML = html;
+        document.querySelectorAll('.orderBtn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const waLink = btn.getAttribute('data-walink');
+            const vendorName = btn.getAttribute('data-vendor');
+            const catLabel = btn.getAttribute('data-cat');
+            let finalLink = waLink;
+            if(!finalLink.includes('text=')) {
+              finalLink += `?text=Halo%20saya%20dari%20JOKI.VEST%2C%20ingin%20order%20joki%20kategori%20${encodeURIComponent(catLabel)}%20di%20${encodeURIComponent(vendorName)}`;
             }
+            window.open(finalLink, '_blank');
+            if(navigator.vibrate) navigator.vibrate(50);
+            showToast(`Membuka chat ${vendorName}...`);
+            saveRecentlyViewed(vendorName);
+          });
         });
-        let catDisplayName = '';
-        if(category === 'rank') catDisplayName = 'Push Rank';
-        else if(category === 'savage') catDisplayName = 'Konten Savage';
-        else if(category === 'global') catDisplayName = 'Global/Supreme';
-        else catDisplayName = 'Gendong Mythic';
-        selectedCatLabel.innerText = `Menampilkan 3 vendor terbaik untuk ${catDisplayName}`;
-        renderVendors(category);
-
-        // munculkan floating button lihat rekomendasi
-        floatingBtnContainer.innerHTML = `<button class="btn btn-neon px-4 py-2 shadow" id="scrollToVendor"><i class="bi bi-binoculars"></i> Lihat 3 Rekomendasi</button>`;
-        const scrollBtn = document.getElementById('scrollToVendor');
-        if(scrollBtn) scrollBtn.addEventListener('click', () => {
-            document.getElementById('vendorSection').scrollIntoView({ behavior: 'smooth' });
-        });
+      }, 300);
     }
 
-    // event listener kategori
+    function setActiveCategory(category) {
+      activeCategory = category;
+      categoryPills.forEach(pill => {
+        if(pill.getAttribute('data-category') === category) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
+      });
+      let catDisplayName = '';
+      if(category === 'rank') catDisplayName = 'Push Rank';
+      else if(category === 'savage') catDisplayName = 'Konten Savage';
+      else if(category === 'global') catDisplayName = 'Global/Supreme';
+      else catDisplayName = 'Gendong Mythic';
+      selectedCatLabel.innerText = `Menampilkan 3 vendor terbaik untuk ${catDisplayName}`;
+      renderVendors(category);
+      floatingBtnContainer.innerHTML = `<button class="btn btn-neon px-4 py-2 shadow" id="scrollToVendor"><i class="bi bi-binoculars"></i> Lihat 3 Rekomendasi</button>`;
+      const scrollBtn = document.getElementById('scrollToVendor');
+      if(scrollBtn) scrollBtn.addEventListener('click', () => {
+        document.getElementById('vendorSection').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
     categoryPills.forEach(pill => {
-        pill.addEventListener('click', (e) => {
-            const cat = pill.getAttribute('data-category');
-            setActiveCategory(cat);
-            // simpan ke localStorage
-            localStorage.setItem('jokivest_last_category', cat);
-            // haptic feedback ringan
-            if(navigator.vibrate) navigator.vibrate(20);
-        });
+      pill.addEventListener('click', (e) => {
+        const cat = pill.getAttribute('data-category');
+        setActiveCategory(cat);
+        localStorage.setItem('jokivest_last_category', cat);
+        if(navigator.vibrate) navigator.vibrate(20);
+        // animasi transisi halus
+        showPageLoader();
+        setTimeout(() => hidePageLoader(), 400);
+      });
     });
 
-    // restore last category
     const savedCat = localStorage.getItem('jokivest_last_category');
     if(savedCat && vendorsDB[savedCat]) {
-        setActiveCategory(savedCat);
+      setActiveCategory(savedCat);
     } else {
-        setActiveCategory('rank'); // default
+      setActiveCategory('rank');
     }
 
-    // FAB WhatsApp middleman (konsultasi)
     const waFab = document.getElementById('waFab');
     waFab.addEventListener('click', () => {
-        const msg = "Halo%20admin%20JOKI.VEST%2C%20saya%20butuh%20bantuan%20memilih%20vendor%20joki%20atau%20middleman%20service";
-        window.open(`https://wa.me/6283820140751?text=${msg}`, '_blank');
-        showToast("Hubungi konsultan JOKI.VEST");
-        if(navigator.vibrate) navigator.vibrate(30);
+      const msg = "Halo%20admin%20JOKI.VEST%2C%20saya%20butuh%20bantuan%20memilih%20vendor%20joki%20atau%20middleman%20service";
+      window.open(`https://wa.me/628?text=${msg}`, '_blank');
+      showToast("Hubungi konsultan JOKI.VEST");
+      if(navigator.vibrate) navigator.vibrate(30);
     });
 
-    // recently viewed (simpan di local storage)
-    function saveRecentlyViewed(vendorName){
-        let recents = JSON.parse(localStorage.getItem('jokivest_recents') || '[]');
-        recents = [vendorName, ...recents.filter(v => v !== vendorName)].slice(0, 3);
-        localStorage.setItem('jokivest_recents', JSON.stringify(recents));
-        let recentDiv = document.getElementById('recentViewWidget');
-        if(!recentDiv){
-            const newDiv = document.createElement('div');
-            newDiv.id = 'recentViewWidget';
-            newDiv.className = 'mb-3 small text-secondary';
-            document.getElementById('vendorSection').insertAdjacentElement('beforebegin', newDiv);
-            recentDiv = newDiv;
-        }
-        if(recents.length) recentDiv.innerHTML = `<i class="bi bi-eye"></i> Terakhir kamu lihat: ${recents.join(', ')}`;
-        else recentDiv.innerHTML = '';
-    }
-
-    // ============== HEADER BACKGROUND SPOT: Bisa diisi manual nanti =============
-    // Memberikan fungsi agar user atau developer dapat dengan mudah mengisi gambar background via JS atau CSS
-    // Contoh: document.getElementById('heroBgSpot').style.backgroundImage = "url('path/gambar.jpg')";
-    // Saat ini background image kosong, hanya menampilkan efek default.
-    // Untuk memudahkan debugging, kita tambahkan observer jika ada gambar dari luar
+    // Header background spot handler
     const heroSpot = document.getElementById('heroBgSpot');
     function checkBackgroundImage() {
-        const computedStyle = window.getComputedStyle(heroSpot);
-        const bgImg = computedStyle.backgroundImage;
-        if(bgImg && bgImg !== 'none' && bgImg !== 'url("")') {
-            heroSpot.classList.add('has-bg');
-        } else {
-            heroSpot.classList.remove('has-bg');
-        }
+      const computedStyle = window.getComputedStyle(heroSpot);
+      const bgImg = computedStyle.backgroundImage;
+      if(bgImg && bgImg !== 'none' && bgImg !== 'url("")') {
+        heroSpot.classList.add('has-bg');
+      } else {
+        heroSpot.classList.remove('has-bg');
+      }
     }
-    // Pemantauan perubahan attribute style (mutation observer)
     const observer = new MutationObserver(() => checkBackgroundImage());
     observer.observe(heroSpot, { attributes: true, attributeFilter: ['style'] });
     checkBackgroundImage();
-    
-    // ============== OFFLINE & PWA service worker register =============
-    if('serviceWorker' in navigator){
-        navigator.serviceWorker.register('/sw.js').then(reg => {
-            console.log('Service Worker registered scope:', reg.scope);
-        }).catch(err => console.log('SW registration failed:', err));
+
+    // Service Worker Registration (PWA) - dengan fallback jika file tidak ditemukan
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registered successfully:', registration.scope);
+          })
+          .catch(error => {
+            console.log('Service Worker registration failed:', error);
+            // SW tidak ditemukan, tapi aplikasi tetap berjalan
+          });
+      });
     }
 
     window.addEventListener('load', () => {
-        localStorage.setItem('jokivest_vendors_backup', JSON.stringify(vendorsDB));
-        if(!navigator.onLine){
-            showToast("Mode Offline: Menampilkan data terakhir yang tersimpan");
-        }
+      localStorage.setItem('jokivest_vendors_backup', JSON.stringify(vendorsDB));
+      if(!navigator.onLine){
+        showToast("Mode Offline: Menampilkan data terakhir yang tersimpan");
+      }
+      hidePageLoader();
     });
 
-    // add to home screen prompt
+    // Add to Home Screen Prompt
     let deferredPrompt;
     window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
+      e.preventDefault();
+      deferredPrompt = e;
+      // Tampilkan tombol install setelah 2 detik
+      setTimeout(() => {
         const installBtnDiv = document.createElement('div');
+        installBtnDiv.id = 'installPwaContainer';
         installBtnDiv.className = 'position-fixed bottom-0 start-0 end-0 bg-dark p-2 text-center z-3';
         installBtnDiv.style.zIndex = '1050';
+        installBtnDiv.style.bottom = '80px';
         installBtnDiv.innerHTML = `<button class="btn btn-neon w-75" id="installPwaBtn">📲 Pasang Aplikasi JOKI.VEST</button>`;
         document.body.appendChild(installBtnDiv);
         document.getElementById('installPwaBtn')?.addEventListener('click', () => {
-            installBtnDiv.remove();
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then(() => deferredPrompt = null);
+          installBtnDiv.remove();
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(() => deferredPrompt = null);
         });
+      }, 2000);
     });
-</script>
+
+    // Profile button alert (demo)
+    document.getElementById('profileBtn')?.addEventListener('click', () => {
+      showToast("👤 Profile: Fitur sedang dalam pengembangan");
+    });
+  </script>
 </body>
+
 </html>
