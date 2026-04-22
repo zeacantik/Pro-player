@@ -1,13 +1,13 @@
 {
   "id": "./",
-  "name": "PWA Template Responsif",
-  "short_name": "PWA Demo",
-  "description": "Aplikasi PWA responsif untuk demonstrasi template dasar Progressive Web App dengan dukungan offline dan installable.",
+  "name": "JOKI.VEST",
+  "short_name": "JOKI.VEST",
+  "description": "Aplikasi JOKI Game terpercaya.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#4F46E5",
-  "theme_color": "#4F46E5",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
   "orientation": "portrait",
   "lang": "id",
   "icons": [
