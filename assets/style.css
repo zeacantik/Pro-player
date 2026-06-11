@@ -1,6 +1,6 @@
 :root {
-  --primary: #4F46E5;
-  --bg: #f9fafb;
+  --primary: #261fa8;
+  --bg: #081e35;
   --text: #1f2937;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-  background: var(--primary);
+  background: #72BAA9;
   color: white;
   text-align: center;
   padding: 1.5rem;
@@ -45,7 +45,7 @@ body {
 }
 
 button {
-  background: var(--primary);
+  background: #DD9E59;
   border: none;
   color: white;
   padding: 0.75rem 1.25rem;
