@@ -1,4 +1,4 @@
-const CACHE_NAME = "JOKI.VEST";
+const CACHE_NAME = "JOKIVEST";
 const BASE_URL = self.registration.scope;
 
 const urlsToCache = [

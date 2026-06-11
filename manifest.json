@@ -1,7 +1,7 @@
 {
   "id": "./",
-  "name": "Joki.Vest",
-  "short_name": "Joki.Vest",
+  "name": "JokiVest",
+  "short_name": "JokiVest",
   "description": "aplikasi penyedia layanan jasa joki terpercaya dan pasti aman untuk meningkatkan peringkat mobile legends",
   "start_url": "./index.html",
   "scope": "./",
