@@ -329,7 +329,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <div class="d-flex align-items-center gap-2">
             <i class="bi bi-shield-shaded fs-2" style="color:#00F5FF"></i>
-            <h1 class="fs-3 m-0 gaming-font">JOKI<span style="color:#00F5FF">VEST</span></h1>
+            <h1 class="fs-3 m-0 gaming-font">JOKI.<span style="color:#00F5FF">VEST</span></h1>
           </div>
           <div>
             <i class="bi bi-person-circle fs-3" style="color:#90A4AE" id="profileBtn" role="button"></i>
@@ -431,7 +431,6 @@
       ],
       gendong: [
         { id: 7, name: "MYTHIC CARRIER", tag: "Gendong Jago", pricePerGame: 35000, speed: "Siap Mabar", rating: 4.85, reviewCount: 1100, guarantee: "Win 90%", waLink: "https://wa.me/628666777888?text=Halo%20saya%20ingin%20gendong%20Mythic" },
-        { id: 8, name: "DUO PRO", tag: "Mabar Cepat", pricePerGame: 30000, speed: "Respons Cepat", rating: 4.7, reviewCount: 543, guarantee: "Fleksibel", waLink: "https://wa.me/628999000111?text=Gendong%20Mythic%20via%20JOKIVEST" }
       ]
     };
 
@@ -546,7 +545,7 @@
             const catLabel = btn.getAttribute('data-cat');
             let finalLink = waLink;
             if(!finalLink.includes('text=')) {
-              finalLink += `?text=Halo%20saya%20dari%20JOKIVEST%2C%20ingin%20order%20joki%20kategori%20${encodeURIComponent(catLabel)}%20di%20${encodeURIComponent(vendorName)}`;
+              finalLink += `?text=Halo%20saya%20dari%20JOKI.VEST%2C%20ingin%20order%20joki%20kategori%20${encodeURIComponent(catLabel)}%20di%20${encodeURIComponent(vendorName)}`;
             }
             window.open(finalLink, '_blank');
             if(navigator.vibrate) navigator.vibrate(50);
@@ -601,9 +600,9 @@
 
     const waFab = document.getElementById('waFab');
     waFab.addEventListener('click', () => {
-      const msg = "Halo%20admin%20JOKIVEST%2C%20saya%20butuh%20bantuan%20memilih%20vendor%20joki%20atau%20middleman%20service";
+      const msg = "Halo%20admin%20JOKI.VEST%2C%20saya%20butuh%20bantuan%20memilih%20vendor%20joki%20atau%20middleman%20service";
       window.open(`https://wa.me/628?text=${msg}`, '_blank');
-      showToast("Hubungi konsultan JOKIVEST");
+      showToast("Hubungi konsultan JOKI.VEST");
       if(navigator.vibrate) navigator.vibrate(30);
     });
 
@@ -656,7 +655,7 @@
         installBtnDiv.className = 'position-fixed bottom-0 start-0 end-0 bg-dark p-2 text-center z-3';
         installBtnDiv.style.zIndex = '1050';
         installBtnDiv.style.bottom = '80px';
-        installBtnDiv.innerHTML = `<button class="btn btn-neon w-75" id="installPwaBtn">📲 Pasang Aplikasi JOKIVEST</button>`;
+        installBtnDiv.innerHTML = `<button class="btn btn-neon w-75" id="installPwaBtn">📲 Pasang Aplikasi JOKI.VEST</button>`;
         document.body.appendChild(installBtnDiv);
         document.getElementById('installPwaBtn')?.addEventListener('click', () => {
           installBtnDiv.remove();
