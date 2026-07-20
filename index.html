@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#0A1128" />
   <meta name="description" content="Platform joki Mobile Legends terpercaya untuk rank boost, savage, dan gendong Mythic">
   <link rel="manifest" href="manifest.json" />
-  <link rel="icons" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2300B4D8'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='%230A1128' font-weight='bold'%3EJV%3C/text%3E%3C/svg%3E">
+  <link rel="icon" type="image/png" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2300B4D8'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='%230A1128' font-weight='bold'%3EJV%3C/text%3E%3C/svg%3E">
   <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%2300B4D8'/%3E%3Ctext x='50' y='67' font-size='50' text-anchor='middle' fill='%230A1128' font-weight='bold'%3EJV%3C/text%3E%3C/svg%3E">
   <title>JOKIVEST - Platform Joki Mobile Legends</title>
   
@@ -65,7 +65,6 @@
     .vendor-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-      border-color: #00B4D8;
     }
 
     /* Category pills */
@@ -173,6 +172,19 @@
       background: #00F5FF;
       transform: scale(0.98);
       color: #000;
+    }
+
+    .btn-start {
+      border: none;
+      color: #0A1128;
+      font-weight: 700;
+      border-radius: 40px;
+      transition: 0.2s;
+      padding: 8px 24px;
+    }
+    .btn-start:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
     }
 
     .btn-outline-neon {
@@ -310,12 +322,143 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
+    /* Vendor Detail Pages - Masing-masing unik */
+    .vendor-detail-page {
+      display: none;
+      animation: fadeSlideUp 0.3s ease-out;
+      padding-bottom: 80px;
+    }
+    .vendor-detail-page.active {
+      display: block;
+    }
+
+    /* Home page */
+    .home-page {
+      display: block;
+    }
+    .home-page.hidden {
+      display: none;
+    }
+
+    /* Package Cards */
+    .package-card {
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 12px;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .package-card:hover {
+      transform: translateX(8px);
+    }
+    .package-card .package-price {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .package-card .package-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .package-card .package-desc {
+      font-size: 0.85rem;
+      opacity: 0.7;
+    }
+    .package-card .order-btn-small {
+      padding: 4px 16px;
+      border-radius: 30px;
+      border: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: 0.2s;
+    }
+    .package-card .order-btn-small:hover {
+      transform: scale(1.05);
+    }
+
+    /* Header Vendor Detail */
+    .vendor-detail-header {
+      padding: 30px 20px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .vendor-detail-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 0;
+    }
+    .vendor-detail-header > * {
+      position: relative;
+      z-index: 1;
+    }
+    .vendor-detail-header .back-btn {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .vendor-detail-header .back-btn:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* Stats */
+    .vendor-stat {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+    }
+    .vendor-stat .value {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    .vendor-stat .label {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
+    /* Badge khusus */
+    .vendor-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* Animasi masuk */
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .slide-up {
+      animation: slideUp 0.4s ease-out forwards;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Page Loader untuk transisi -->
+  <!-- Page Loader -->
   <div id="pageLoader" class="page-loader">
     <div class="loader-spinner"></div>
   </div>
@@ -323,89 +466,397 @@
   <!-- Main App -->
   <div class="container-fluid px-3 px-md-4 py-3" id="appRoot">
     
-    <!-- Header dengan background spot kosong untuk gambar -->
-    <div class="hero-background-spot" id="heroBgSpot">
-      <div class="hero-overlay">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="d-flex align-items-center gap-2">
-            <i class="bi bi-shield-shaded fs-2" style="color:#00F5FF"></i>
-            <h1 class="fs-3 m-0 gaming-font">JOKI.<span style="color:#00F5FF">VEST</span></h1>
+    <!-- HOME PAGE -->
+    <div id="homePage" class="home-page">
+      <!-- Header -->
+      <div class="hero-background-spot" id="heroBgSpot">
+        <div class="hero-overlay">
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-shield-shaded fs-2" style="color:#00F5FF"></i>
+              <h1 class="fs-3 m-0 gaming-font">JOKI.<span style="color:#00F5FF">VEST</span></h1>
+            </div>
+            <div>
+              <i class="bi bi-person-circle fs-3" style="color:#90A4AE" id="profileBtn" role="button"></i>
+            </div>
           </div>
-          <div>
-            <i class="bi bi-person-circle fs-3" style="color:#90A4AE" id="profileBtn" role="button"></i>
+          <div class="mt-3 mt-md-4 text-center text-md-start">
+            <h2 class="fw-bold" style="font-size:1.9rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5);">Pusing Mikirin Rank? <br> Temukan Joki Terbaikmu di Sini</h2>
+            <p class="text-info-emphasis" style="color:#B3E5FC">Kami kurasi, Anda yang pilih.</p>
           </div>
         </div>
-        
-        <div class="mt-3 mt-md-4 text-center text-md-start" data-aos="fade-up">
-          <h2 class="fw-bold" style="font-size:1.9rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5);">Pusing Mikirin Rank? <br> Temukan Joki Terbaikmu di Sini</h2>
-          <p class="text-info-emphasis" style="color:#B3E5FC">Kami kurasi, Anda yang pilih.</p>
+        <div class="bg-hint"><i class="bi bi-image"></i> </div>
+      </div>
+
+      <!-- Smart Filter Widget -->
+      <div class="mb-5">
+        <label class="fw-semibold mb-3"><i class="bi bi-robot"></i> Apa Goal Kamu Hari Ini?</label>
+        <div class="row g-3" id="categoryContainer">
+          <div class="col-6 col-md-3">
+            <div class="category-pill" data-category="rank">
+              <i class="bi bi-trophy-fill"></i>
+              <span>Push Rank</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="category-pill" data-category="savage">
+              <i class="bi bi-sword"></i>
+              <span>Konten Savage</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="category-pill" data-category="global">
+              <i class="bi bi-crown-fill"></i>
+              <span>Global/Supreme</span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3">
+            <div class="category-pill" data-category="gendong">
+              <i class="bi bi-people-fill"></i>
+              <span>Gendong Mythic</span>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4" id="floatingBtnContainer" style="min-height: 60px;"></div>
+      </div>
+
+      <!-- Rekomendasi Vendor -->
+      <div id="vendorSection">
+        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+          <h4 class="gaming-font"><i class="bi bi-graph-up"></i> Rekomendasi Joki Terbaik</h4>
+          <small class="text-info" id="selectedCatLabel">Pilih kategori di atas</small>
+        </div>
+        <div id="vendorList" class="row g-4"></div>
+      </div>
+
+      <!-- Blog -->
+      <div class="mt-5 pt-3">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <i class="bi bi-newspaper fs-4" style="color:#00B4D8"></i>
+          <h5 class="m-0">Meta Update & Tips</h5>
+        </div>
+        <div class="bg-dark p-3 rounded-4" style="background:#0F172F!important">
+          <p class="mb-1"><i class="bi bi-patch-check-fill text-info"></i> <strong>Patch Notes MLBB: Hero Terbaru</strong> – Harga joki mungkin naik! Simak update biar aman.</p>
+          <p class="small text-secondary">Tips: Gunakan mode "Safe Boost" untuk hindari banned. Selalu ubah password setelah joki selesai.</p>
         </div>
       </div>
-      <div class="bg-hint"><i class="bi bi-image"></i> </div>
+
+      <!-- Footer -->
+      <footer class="mt-5 pt-4 pb-3 text-center">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+          <span><i class="bi bi-shield-check text-info"></i> Verified Vendor</span>
+          <span><i class="bi bi-lightning-charge text-info"></i> Fast Response 99%</span>
+          <span><i class="bi bi-shield-lock-fill text-info"></i> Anti-Ban Guarantee</span>
+        </div>
+        <p class="text-secondary-emphasis mt-3 small">&copy; 2025 JOKIVEST — Platform Joki Terpercaya</p>
+      </footer>
     </div>
 
-    <!-- Smart Filter Widget -->
-    <div class="mb-5" data-aos="fade-up" data-aos-delay="50">
-      <label class="fw-semibold mb-3"><i class="bi bi-robot"></i> Apa Goal Kamu Hari Ini?</label>
-      <div class="row g-3" id="categoryContainer">
-        <div class="col-6 col-md-3">
-          <div class="category-pill" data-category="rank">
-            <i class="bi bi-trophy-fill"></i>
-            <span>Push Rank</span>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="category-pill" data-category="savage">
-            <i class="bi bi-sword"></i>
-            <span>Konten Savage</span>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="category-pill" data-category="global">
-            <i class="bi bi-crown-fill"></i>
-            <span>Global/Supreme</span>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="category-pill" data-category="gendong">
-            <i class="bi bi-people-fill"></i>
-            <span>Gendong Mythic</span>
-          </div>
-        </div>
-      </div>
-      <div class="text-center mt-4" id="floatingBtnContainer" style="min-height: 60px;"></div>
-    </div>
+    <!-- ============================================================ -->
+    <!-- VENDOR DETAIL PAGES (Masing-masing unik) -->
+    <!-- ============================================================ -->
 
-    <!-- Rekomendasi Vendor + Price Comparison Section -->
-    <div id="vendorSection">
-      <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
-        <h4 class="gaming-font"><i class="bi bi-graph-up"></i> Rekomendasi Joki Terbaik</h4>
-        <small class="text-info" id="selectedCatLabel">Pilih kategori di atas</small>
+    <!-- 1. TAKAPEDIA -->
+    <div id="vendor-takapedia" class="vendor-detail-page">
+      <div class="vendor-detail-header" style="background: linear-gradient(135deg, #FF6B3522 0%, #1a0e08 100%); border: 1px solid #FF6B3544;">
+        <button class="back-btn" onclick="closeVendorDetail()">
+          <i class="bi bi-arrow-left"></i> Kembali
+        </button>
+        <div class="text-center mt-3">
+          <div class="d-flex align-items-center justify-content-center gap-3">
+            <i class="bi bi-fire fs-1" style="color:#FF6B35"></i>
+            <h2 class="gaming-font mb-0" style="color:#FF6B35">TAKAPEDIA</h2>
+          </div>
+          <p class="mb-0" style="opacity:0.8;">🔥 Verified • Top Rated</p>
+        </div>
       </div>
-      <div id="vendorList" class="row g-4"></div>
-    </div>
 
-    <!-- Blog / Update Meta Ringan -->
-    <div class="mt-5 pt-3" data-aos="fade-up">
-      <div class="d-flex align-items-center gap-2 mb-3">
-        <i class="bi bi-newspaper fs-4" style="color:#00B4D8"></i>
-        <h5 class="m-0">Meta Update & Tips</h5>
+      <div class="row g-3 mb-4">
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#FF6B35">⭐ 4.9</div><div class="label">Rating</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#FF6B35">1.200</div><div class="label">Review</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#FF6B35">🛡️ 100%</div><div class="label">Trust Meter</div></div></div>
       </div>
-      <div class="bg-dark p-3 rounded-4" style="background:#0F172F!important">
-        <p class="mb-1"><i class="bi bi-patch-check-fill text-info"></i> <strong>Patch Notes MLBB: Hero Terbaru</strong> – Harga joki mungkin naik! Simak update biar aman.</p>
-        <p class="small text-secondary">Tips: Gunakan mode "Safe Boost" untuk hindari banned. Selalu ubah password setelah joki selesai.</p>
+
+      <div class="mb-4">
+        <h5 class="gaming-font mb-3" style="color:#FF6B35"><i class="bi bi-box-seam"></i> Paket Joki TAKAPEDIA</h5>
+        <div id="packages-takapedia"></div>
+      </div>
+
+      <div class="bg-dark p-4 rounded-4 mb-4" style="background:#0F172F!important">
+        <div class="row g-3">
+          <div class="col-6"><div class="text-secondary">Garansi</div><div class="fw-bold" style="color:#FF6B35">Anti-Ban + Garansi 100%</div></div>
+          <div class="col-6"><div class="text-secondary">Kecepatan</div><div class="fw-bold" style="color:#FF6B35">Sangat Cepat (1-2 Hari)</div></div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-3">
+        <button class="btn py-3 fs-5" style="background:#FF6B35; color:#0A1128; border:none; border-radius:40px; font-weight:700;" onclick="orderVendor('TAKAPEDIA', 'https://wa.me/628123456789?text=Halo%20saya%20dari%20JOKIVEST%2C%20ingin%20order%20joki%20TAKAPEDIA')">
+          <i class="bi bi-whatsapp"></i> Order Sekarang
+        </button>
+        <button class="btn btn-outline-neon py-2" onclick="consultVendor()">
+          <i class="bi bi-chat-dots"></i> Konsultasi
+        </button>
       </div>
     </div>
 
-    <!-- Footer dengan trust-meter -->
-    <footer class="mt-5 pt-4 pb-3 text-center">
-      <div class="d-flex justify-content-center gap-4 flex-wrap">
-        <span><i class="bi bi-shield-check text-info"></i> Verified Vendor</span>
-        <span><i class="bi bi-lightning-charge text-info"></i> Fast Response 99%</span>
-        <span><i class="bi bi-shield-lock-fill text-info"></i> Anti-Ban Guarantee</span>
+    <!-- 2. ACURSIO -->
+    <div id="vendor-acursio" class="vendor-detail-page">
+      <div class="vendor-detail-header" style="background: linear-gradient(135deg, #7B2FBE22 0%, #12081a 100%); border: 1px solid #7B2FBE44;">
+        <button class="back-btn" onclick="closeVendorDetail()">
+          <i class="bi bi-arrow-left"></i> Kembali
+        </button>
+        <div class="text-center mt-3">
+          <div class="d-flex align-items-center justify-content-center gap-3">
+            <i class="bi bi-lightning fs-1" style="color:#7B2FBE"></i>
+            <h2 class="gaming-font mb-0" style="color:#7B2FBE">ACURSIO</h2>
+          </div>
+          <p class="mb-0" style="opacity:0.8;">⚡ Fast Response • Terpercaya</p>
+        </div>
       </div>
-      <p class="text-secondary-emphasis mt-3 small">&copy; 2025 JOKIVEST — Platform Joki Terpercaya</p>
-    </footer>
+
+      <div class="row g-3 mb-4">
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#7B2FBE">⭐ 4.7</div><div class="label">Rating</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#7B2FBE">890</div><div class="label">Review</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#7B2FBE">✅ 90%</div><div class="label">Trust Meter</div></div></div>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="gaming-font mb-3" style="color:#7B2FBE"><i class="bi bi-box-seam"></i> Paket Joki ACURSIO</h5>
+        <div id="packages-acursio"></div>
+      </div>
+
+      <div class="bg-dark p-4 rounded-4 mb-4" style="background:#0F172F!important">
+        <div class="row g-3">
+          <div class="col-6"><div class="text-secondary">Garansi</div><div class="fw-bold" style="color:#7B2FBE">Winrate 90%</div></div>
+          <div class="col-6"><div class="text-secondary">Kecepatan</div><div class="fw-bold" style="color:#7B2FBE">Cepat (2-3 Hari)</div></div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-3">
+        <button class="btn py-3 fs-5" style="background:#7B2FBE; color:white; border:none; border-radius:40px; font-weight:700;" onclick="orderVendor('ACURSIO', 'https://wa.me/628987654321?text=Halo%20saya%20dari%20JOKIVEST%2C%20order%20ACURSIO')">
+          <i class="bi bi-whatsapp"></i> Order Sekarang
+        </button>
+        <button class="btn btn-outline-neon py-2" onclick="consultVendor()">
+          <i class="bi bi-chat-dots"></i> Konsultasi
+        </button>
+      </div>
+    </div>
+
+    <!-- 3. GODLIKE BOOST -->
+    <div id="vendor-godlike" class="vendor-detail-page">
+      <div class="vendor-detail-header" style="background: linear-gradient(135deg, #FFD70022 0%, #1a1400 100%); border: 1px solid #FFD70044;">
+        <button class="back-btn" onclick="closeVendorDetail()">
+          <i class="bi bi-arrow-left"></i> Kembali
+        </button>
+        <div class="text-center mt-3">
+          <div class="d-flex align-items-center justify-content-center gap-3">
+            <i class="bi bi-trophy fs-1" style="color:#FFD700"></i>
+            <h2 class="gaming-font mb-0" style="color:#FFD700">GODLIKE BOOST</h2>
+          </div>
+          <p class="mb-0" style="opacity:0.8;">🏆 Pro Player • Elite</p>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#FFD700">⭐ 5.0</div><div class="label">Rating</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#FFD700">450</div><div class="label">Review</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#FFD700">🌟 100%</div><div class="label">Trust Meter</div></div></div>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="gaming-font mb-3" style="color:#FFD700"><i class="bi bi-box-seam"></i> Paket Joki GODLIKE</h5>
+        <div id="packages-godlike"></div>
+      </div>
+
+      <div class="bg-dark p-4 rounded-4 mb-4" style="background:#0F172F!important">
+        <div class="row g-3">
+          <div class="col-6"><div class="text-secondary">Garansi</div><div class="fw-bold" style="color:#FFD700">Live Streaming</div></div>
+          <div class="col-6"><div class="text-secondary">Kecepatan</div><div class="fw-bold" style="color:#FFD700">Express (12 Jam)</div></div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-3">
+        <button class="btn py-3 fs-5" style="background:#FFD700; color:#0A1128; border:none; border-radius:40px; font-weight:700;" onclick="orderVendor('GODLIKE BOOST', 'https://wa.me/628555123456?text=Halo%20saya%20dari%20JOKIVEST%2C%20butuh%20boost%20GODLIKE')">
+          <i class="bi bi-whatsapp"></i> Order Sekarang
+        </button>
+        <button class="btn btn-outline-neon py-2" onclick="consultVendor()">
+          <i class="bi bi-chat-dots"></i> Konsultasi
+        </button>
+      </div>
+    </div>
+
+    <!-- 4. SAVAGE MASTER -->
+    <div id="vendor-savagemaster" class="vendor-detail-page">
+      <div class="vendor-detail-header" style="background: linear-gradient(135deg, #E74C3C22 0%, #1a0806 100%); border: 1px solid #E74C3C44;">
+        <button class="back-btn" onclick="closeVendorDetail()">
+          <i class="bi bi-arrow-left"></i> Kembali
+        </button>
+        <div class="text-center mt-3">
+          <div class="d-flex align-items-center justify-content-center gap-3">
+            <i class="bi bi-sword fs-1" style="color:#E74C3C"></i>
+            <h2 class="gaming-font mb-0" style="color:#E74C3C">SAVAGE MASTER</h2>
+          </div>
+          <p class="mb-0" style="opacity:0.8;">⚔️ Savage Specialist</p>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#E74C3C">⭐ 4.8</div><div class="label">Rating</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#E74C3C">340</div><div class="label">Review</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#E74C3C">🎯 100%</div><div class="label">Trust Meter</div></div></div>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="gaming-font mb-3" style="color:#E74C3C"><i class="bi bi-box-seam"></i> Paket Savage</h5>
+        <div id="packages-savagemaster"></div>
+      </div>
+
+      <div class="bg-dark p-4 rounded-4 mb-4" style="background:#0F172F!important">
+        <div class="row g-3">
+          <div class="col-6"><div class="text-secondary">Garansi</div><div class="fw-bold" style="color:#E74C3C">Video Replay</div></div>
+          <div class="col-6"><div class="text-secondary">Kecepatan</div><div class="fw-bold" style="color:#E74C3C">1 Hari jadi</div></div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-3">
+        <button class="btn py-3 fs-5" style="background:#E74C3C; color:white; border:none; border-radius:40px; font-weight:700;" onclick="orderVendor('SAVAGE MASTER', 'https://wa.me/628111222333?text=Halo%20JOKIVEST%2C%20pesan%20joki%20SAVAGE%20MASTER')">
+          <i class="bi bi-whatsapp"></i> Order Sekarang
+        </button>
+        <button class="btn btn-outline-neon py-2" onclick="consultVendor()">
+          <i class="bi bi-chat-dots"></i> Konsultasi
+        </button>
+      </div>
+    </div>
+
+    <!-- 5. GOLD LANE ID -->
+    <div id="vendor-goldlane" class="vendor-detail-page">
+      <div class="vendor-detail-header" style="background: linear-gradient(135deg, #F39C1222 0%, #1a0e00 100%); border: 1px solid #F39C1244;">
+        <button class="back-btn" onclick="closeVendorDetail()">
+          <i class="bi bi-arrow-left"></i> Kembali
+        </button>
+        <div class="text-center mt-3">
+          <div class="d-flex align-items-center justify-content-center gap-3">
+            <i class="bi bi-arrow-right-circle fs-1" style="color:#F39C12"></i>
+            <h2 class="gaming-font mb-0" style="color:#F39C12">GOLD LANE ID</h2>
+          </div>
+          <p class="mb-0" style="opacity:0.8;">🎯 MM Main • Manual</p>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#F39C12">⭐ 4.6</div><div class="label">Rating</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#F39C12">210</div><div class="label">Review</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#F39C12">✅ 85%</div><div class="label">Trust Meter</div></div></div>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="gaming-font mb-3" style="color:#F39C12"><i class="bi bi-box-seam"></i> Paket Savage</h5>
+        <div id="packages-goldlane"></div>
+      </div>
+
+      <div class="bg-dark p-4 rounded-4 mb-4" style="background:#0F172F!important">
+        <div class="row g-3">
+          <div class="col-6"><div class="text-secondary">Garansi</div><div class="fw-bold" style="color:#F39C12">Manual</div></div>
+          <div class="col-6"><div class="text-secondary">Kecepatan</div><div class="fw-bold" style="color:#F39C12">Cepat (Sameday)</div></div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-3">
+        <button class="btn py-3 fs-5" style="background:#F39C12; color:#0A1128; border:none; border-radius:40px; font-weight:700;" onclick="orderVendor('GOLD LANE ID', 'https://wa.me/628444555666?text=Order%20Savage%20via%20GOLD%20LANE%20ID')">
+          <i class="bi bi-whatsapp"></i> Order Sekarang
+        </button>
+        <button class="btn btn-outline-neon py-2" onclick="consultVendor()">
+          <i class="bi bi-chat-dots"></i> Konsultasi
+        </button>
+      </div>
+    </div>
+
+    <!-- 6. SUPREME HUNTER -->
+    <div id="vendor-supreme" class="vendor-detail-page">
+      <div class="vendor-detail-header" style="background: linear-gradient(135deg, #00CED122 0%, #001a1a 100%); border: 1px solid #00CED144;">
+        <button class="back-btn" onclick="closeVendorDetail()">
+          <i class="bi bi-arrow-left"></i> Kembali
+        </button>
+        <div class="text-center mt-3">
+          <div class="d-flex align-items-center justify-content-center gap-3">
+            <i class="bi bi-crown fs-1" style="color:#00CED1"></i>
+            <h2 class="gaming-font mb-0" style="color:#00CED1">SUPREME HUNTER</h2>
+          </div>
+          <p class="mb-0" style="opacity:0.8;">👑 Global Top • Supreme</p>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#00CED1">⭐ 4.95</div><div class="label">Rating</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#00CED1">602</div><div class="label">Review</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#00CED1">🏅 100%</div><div class="label">Trust Meter</div></div></div>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="gaming-font mb-3" style="color:#00CED1"><i class="bi bi-box-seam"></i> Paket Global</h5>
+        <div id="packages-supreme"></div>
+      </div>
+
+      <div class="bg-dark p-4 rounded-4 mb-4" style="background:#0F172F!important">
+        <div class="row g-3">
+          <div class="col-6"><div class="text-secondary">Garansi</div><div class="fw-bold" style="color:#00CED1">Supreme Rank</div></div>
+          <div class="col-6"><div class="text-secondary">Kecepatan</div><div class="fw-bold" style="color:#00CED1">Prioritas Tinggi</div></div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-3">
+        <button class="btn py-3 fs-5" style="background:#00CED1; color:#0A1128; border:none; border-radius:40px; font-weight:700;" onclick="orderVendor('SUPREME HUNTER', 'https://wa.me/628777888999?text=JOKIVEST%20Global%20Supreme')">
+          <i class="bi bi-whatsapp"></i> Order Sekarang
+        </button>
+        <button class="btn btn-outline-neon py-2" onclick="consultVendor()">
+          <i class="bi bi-chat-dots"></i> Konsultasi
+        </button>
+      </div>
+    </div>
+
+    <!-- 7. MYTHIC CARRIER -->
+    <div id="vendor-mythic" class="vendor-detail-page">
+      <div class="vendor-detail-header" style="background: linear-gradient(135deg, #2ECC7122 0%, #001a0a 100%); border: 1px solid #2ECC7144;">
+        <button class="back-btn" onclick="closeVendorDetail()">
+          <i class="bi bi-arrow-left"></i> Kembali
+        </button>
+        <div class="text-center mt-3">
+          <div class="d-flex align-items-center justify-content-center gap-3">
+            <i class="bi bi-people fs-1" style="color:#2ECC71"></i>
+            <h2 class="gaming-font mb-0" style="color:#2ECC71">MYTHIC CARRIER</h2>
+          </div>
+          <p class="mb-0" style="opacity:0.8;">👥 Gendong Jago • Win 90%</p>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#2ECC71">⭐ 4.85</div><div class="label">Rating</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#2ECC71">1.100</div><div class="label">Review</div></div></div>
+        <div class="col-4"><div class="vendor-stat"><div class="value" style="color:#2ECC71">🎮 90%</div><div class="label">Trust Meter</div></div></div>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="gaming-font mb-3" style="color:#2ECC71"><i class="bi bi-box-seam"></i> Paket Gendong</h5>
+        <div id="packages-mythic"></div>
+      </div>
+
+      <div class="bg-dark p-4 rounded-4 mb-4" style="background:#0F172F!important">
+        <div class="row g-3">
+          <div class="col-6"><div class="text-secondary">Garansi</div><div class="fw-bold" style="color:#2ECC71">Win 90%</div></div>
+          <div class="col-6"><div class="text-secondary">Kecepatan</div><div class="fw-bold" style="color:#2ECC71">Siap Mabar</div></div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-3">
+        <button class="btn py-3 fs-5" style="background:#2ECC71; color:#0A1128; border:none; border-radius:40px; font-weight:700;" onclick="orderVendor('MYTHIC CARRIER', 'https://wa.me/628666777888?text=Halo%20saya%20ingin%20gendong%20Mythic')">
+          <i class="bi bi-whatsapp"></i> Order Sekarang
+        </button>
+        <button class="btn btn-outline-neon py-2" onclick="consultVendor()">
+          <i class="bi bi-chat-dots"></i> Konsultasi
+        </button>
+      </div>
+    </div>
+
   </div>
 
   <!-- Floating WhatsApp FAB -->
@@ -415,55 +866,99 @@
   <div id="toastMsg" class="custom-toast">✅ Tersalin! Hubungi vendor via WA</div>
 
   <script>
-    // ======================== DATA VENDOR (aggregator) =======================
-    const vendorsDB = {
-      rank: [
-        { id: 1, name: "TAKAPEDIA", tag: "Verified", pricePerStar: 10000, speed: "Sangat Cepat (1-2 Hari)", rating: 4.9, reviewCount: 1200, guarantee: "Anti-Ban + Garansi", waLink: "https://wa.me/628123456789?text=Halo%20saya%20dari%20JOKIVEST%2C%20ingin%20order%20joki%20kategori%20Push%20Rank" },
-        { id: 2, name: "ACURSIO", tag: "Fast Response", pricePerStar: 8500, speed: "Cepat (2-3 Hari)", rating: 4.7, reviewCount: 890, guarantee: "Winrate 90%", waLink: "https://wa.me/628987654321?text=Halo%20saya%20dari%20JOKIVEST%2C%20order%20Push%20Rank" },
-        { id: 3, name: "GODLIKE BOOST", tag: "Pro Player", pricePerStar: 12000, speed: "Express (12 Jam)", rating: 5.0, reviewCount: 450, guarantee: "Live Streaming", waLink: "https://wa.me/628555123456?text=Halo%20saya%20dari%20JOKIVEST%2C%20butuh%20boost%20cepat" }
+    // ======================== DATA VENDOR =======================
+    const vendorPackages = {
+      'takapedia': [
+        { name: "Rank Boost Basic", price: "Rp 10.000", desc: "1-2 Bintang / Cepat" },
+        { name: "Rank Boost Pro", price: "Rp 45.000", desc: "5-10 Bintang / Express" },
+        { name: "Rank Boost Premium", price: "Rp 85.000", desc: "15-20 Bintang / Prioritas" },
+        { name: "Mythic Boost", price: "Rp 150.000", desc: "Mythic V - Mythic III" },
+        { name: "Glory Boost", price: "Rp 250.000", desc: "Mythic Glory 100+ pts" }
       ],
-      savage: [
-        { id: 4, name: "SAVAGE MASTER", tag: "Savage Specialist", pricePerSavage: 250000, speed: "1 Hari jadi", rating: 4.8, reviewCount: 340, guarantee: "Video Replay", waLink: "https://wa.me/628111222333?text=Halo%20JOKIVEST%2C%20pesan%20joki%20Konten%20Savage" },
-        { id: 5, name: "GOLD LANE ID", tag: "MM Main", pricePerSavage: 210000, speed: "Cepat (Sameday)", rating: 4.6, reviewCount: 210, guarantee: "Manual", waLink: "https://wa.me/628444555666?text=Order%20Savage%20via%20JOKIVEST" }
+      'acursio': [
+        { name: "Economy Boost", price: "Rp 8.500", desc: "1 Bintang / Hemat" },
+        { name: "Standard Boost", price: "Rp 40.000", desc: "5 Bintang / Standar" },
+        { name: "Express Boost", price: "Rp 75.000", desc: "10-15 Bintang / Cepat" },
+        { name: "Mythic Special", price: "Rp 135.000", desc: "Mythic V - Mythic II" },
+        { name: "Glory Rush", price: "Rp 220.000", desc: "Mythic Glory 50+ pts" }
       ],
-      global: [
-        { id: 6, name: "SUPREME HUNTER", tag: "Global Top", pricePerStar: 25000, speed: "Prioritas Tinggi", rating: 4.95, reviewCount: 602, guarantee: "Supreme Rank", waLink: "https://wa.me/628777888999?text=JOKIVEST%20Global%20Supreme" }
+      'godlike': [
+        { name: "Quick Boost", price: "Rp 12.000", desc: "1 Bintang / Instan" },
+        { name: "Turbo Boost", price: "Rp 55.000", desc: "5 Bintang / Cepat" },
+        { name: "Ultra Boost", price: "Rp 100.000", desc: "10-15 Bintang / Express" },
+        { name: "Mythic Pro", price: "Rp 180.000", desc: "Mythic V - Mythic I" },
+        { name: "Glory Elite", price: "Rp 300.000", desc: "Mythic Glory 200+ pts" }
       ],
-      gendong: [
-        { id: 7, name: "MYTHIC CARRIER", tag: "Gendong Jago", pricePerGame: 35000, speed: "Siap Mabar", rating: 4.85, reviewCount: 1100, guarantee: "Win 90%", waLink: "https://wa.me/628666777888?text=Halo%20saya%20ingin%20gendong%20Mythic" },
+      'savagemaster': [
+        { name: "Savage 1x", price: "Rp 250.000", desc: "1 Savage / Replay Included" },
+        { name: "Savage 3x", price: "Rp 700.000", desc: "3 Savage / Bonus Replay" },
+        { name: "Savage 5x", price: "Rp 1.100.000", desc: "5 Savage / Full Package" },
+        { name: "Savage Montage", price: "Rp 1.500.000", desc: "10 Savage + Edit Video" }
+      ],
+      'goldlane': [
+        { name: "Savage Basic", price: "Rp 210.000", desc: "1 Savage / Manual" },
+        { name: "Savage Duo", price: "Rp 400.000", desc: "2 Savage / Cepat" },
+        { name: "Savage Pack", price: "Rp 950.000", desc: "5 Savage + Highlight" }
+      ],
+      'supreme': [
+        { name: "Global Points", price: "Rp 25.000", desc: "1 Supreme Point" },
+        { name: "Global 10pts", price: "Rp 230.000", desc: "10 Supreme Points" },
+        { name: "Global 25pts", price: "Rp 550.000", desc: "25 Supreme Points" },
+        { name: "Global 50pts", price: "Rp 1.000.000", desc: "50 Supreme Points" },
+        { name: "Global Top 100", price: "Rp 2.500.000", desc: "Push to Top 100 Global" }
+      ],
+      'mythic': [
+        { name: "Carry 1 Game", price: "Rp 35.000", desc: "1 Game / Win Guarantee" },
+        { name: "Carry 3 Game", price: "Rp 100.000", desc: "3 Game / Fast Response" },
+        { name: "Carry 5 Game", price: "Rp 160.000", desc: "5 Game / Bonus 1 Game" },
+        { name: "Carry 10 Game", price: "Rp 300.000", desc: "10 Game / Free Consultation" },
+        { name: "Mythic Carry", price: "Rp 500.000", desc: "Carry to Mythic / Full Service" }
       ]
     };
 
-    let activeCategory = null;
-    let currentVendors = [];
+    const vendorColors = {
+      'takapedia': '#FF6B35',
+      'acursio': '#7B2FBE',
+      'godlike': '#FFD700',
+      'savagemaster': '#E74C3C',
+      'goldlane': '#F39C12',
+      'supreme': '#00CED1',
+      'mythic': '#2ECC71'
+    };
 
+    const vendorWaLinks = {
+      'takapedia': 'https://wa.me/628123456789',
+      'acursio': 'https://wa.me/628987654321',
+      'godlike': 'https://wa.me/628555123456',
+      'savagemaster': 'https://wa.me/628111222333',
+      'goldlane': 'https://wa.me/628444555666',
+      'supreme': 'https://wa.me/628777888999',
+      'mythic': 'https://wa.me/628666777888'
+    };
+
+    const vendorNames = {
+      'takapedia': 'TAKAPEDIA',
+      'acursio': 'ACURSIO',
+      'godlike': 'GODLIKE BOOST',
+      'savagemaster': 'SAVAGE MASTER',
+      'goldlane': 'GOLD LANE ID',
+      'supreme': 'SUPREME HUNTER',
+      'mythic': 'MYTHIC CARRIER'
+    };
+
+    let activeCategory = null;
     const vendorContainer = document.getElementById('vendorList');
     const floatingBtnContainer = document.getElementById('floatingBtnContainer');
     const selectedCatLabel = document.getElementById('selectedCatLabel');
     const categoryPills = document.querySelectorAll('.category-pill');
     const pageLoader = document.getElementById('pageLoader');
+    const homePage = document.getElementById('homePage');
 
     function showPageLoader() {
       pageLoader.classList.add('show');
     }
     function hidePageLoader() {
       pageLoader.classList.remove('show');
-    }
-
-    function getPriceLabel(vendor, cat) {
-      if(cat === 'rank') return `Rp ${vendor.pricePerStar.toLocaleString()} / Bintang`;
-      if(cat === 'savage') return `Rp ${vendor.pricePerSavage.toLocaleString()} / Savage`;
-      if(cat === 'global') return `Rp ${vendor.pricePerStar.toLocaleString()} / Bintang`;
-      if(cat === 'gendong') return `Rp ${vendor.pricePerGame.toLocaleString()} / Game`;
-      return 'Custom';
-    }
-
-    function showSkeleton() {
-      vendorContainer.innerHTML = `
-        <div class="col-12"><div class="skeleton-card"></div></div>
-        <div class="col-12"><div class="skeleton-card"></div></div>
-        <div class="col-12"><div class="skeleton-card"></div></div>
-      `;
     }
 
     function showToast(msg) {
@@ -473,202 +968,198 @@
       setTimeout(() => toastEl.classList.remove('show'), 2000);
     }
 
-    function saveRecentlyViewed(vendorName) {
-      let recents = JSON.parse(localStorage.getItem('jokivest_recents') || '[]');
-      recents = [vendorName, ...recents.filter(v => v !== vendorName)].slice(0, 3);
-      localStorage.setItem('jokivest_recents', JSON.stringify(recents));
-      let recentDiv = document.getElementById('recentViewWidget');
-      if(!recentDiv){
-        const newDiv = document.createElement('div');
-        newDiv.id = 'recentViewWidget';
-        newDiv.className = 'mb-3 small text-secondary';
-        document.getElementById('vendorSection').insertAdjacentElement('beforebegin', newDiv);
-        recentDiv = newDiv;
-      }
-      if(recents.length) recentDiv.innerHTML = `<i class="bi bi-eye"></i> Terakhir kamu lihat: ${recents.join(', ')}`;
-      else recentDiv.innerHTML = '';
-    }
-
-    function renderVendors(category) {
-      showSkeleton();
-      setTimeout(() => {
-        let vendors = [...(vendorsDB[category] || [])];
-        if(vendors.length === 0) {
-          vendorContainer.innerHTML = `<div class="col-12 text-center py-5"><i class="bi bi-emoji-frown fs-1"></i><p class="mt-2">Maaf, kriteria joki belum tersedia. Coba kriteria lain?</p></div>`;
-          return;
-        }
-        currentVendors = vendors;
-        let html = '';
-        vendors.forEach(v => {
-          let priceText = getPriceLabel(v, category);
-          let starFull = Math.floor(v.rating);
-          let starHalf = (v.rating % 1) >= 0.5 ? 1 : 0;
-          let starEmpty = 5 - starFull - starHalf;
-          let stars = '';
-          for(let i=0;i<starFull;i++) stars += '<i class="bi bi-star-fill"></i>';
-          if(starHalf) stars += '<i class="bi bi-star-half"></i>';
-          for(let i=0;i<starEmpty;i++) stars += '<i class="bi bi-star"></i>';
-          html += `
-            <div class="col-12" data-aos="fade-up">
-              <div class="vendor-card p-3 p-md-4">
-                <div class="d-flex justify-content-between align-items-start flex-wrap">
-                  <div>
-                    <h5 class="fw-bold mb-1">${v.name} <span class="badge bg-info text-dark ms-2">${v.tag}</span></h5>
-                    <div class="small text-secondary">${v.guarantee || 'Trusted'}</div>
-                  </div>
-                  <div class="text-end">
-                    <div class="star-rating fs-6">${stars} ${v.rating}</div>
-                    <small>(${v.reviewCount} review)</small>
-                  </div>
+    // Show vendor detail page
+    function showVendorDetail(vendorId) {
+      // Hide all detail pages
+      document.querySelectorAll('.vendor-detail-page').forEach(el => el.classList.remove('active'));
+      // Show selected
+      const detailEl = document.getElementById(`vendor-${vendorId}`);
+      if (detailEl) {
+        detailEl.classList.add('active');
+        // Load packages
+        const packages = vendorPackages[vendorId] || [];
+        const container = document.getElementById(`packages-${vendorId}`);
+        if (container && packages.length > 0) {
+          const color = vendorColors[vendorId] || '#00B4D8';
+          container.innerHTML = packages.map(pkg => `
+            <div class="package-card" style="background: ${color}11; border-color: ${color}33;">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <div class="package-name" style="color: ${color}">${pkg.name}</div>
+                  <div class="package-desc">${pkg.desc}</div>
                 </div>
-                <hr class="bg-secondary">
-                <div class="row g-2 align-items-center">
-                  <div class="col-6">
-                    <div class="fw-bold fs-5" style="color:#00F5FF">${priceText}</div>
-                    <small><i class="bi bi-clock"></i> ${v.speed}</small>
-                  </div>
-                  <div class="col-6 text-end">
-                    <button class="btn btn-neon px-4 orderBtn" data-walink="${v.waLink}" data-vendor="${v.name}" data-cat="${category}">ORDER SEKARANG <i class="bi bi-arrow-right-short"></i></button>
-                  </div>
+                <div class="text-end">
+                  <div class="package-price" style="color: ${color}">${pkg.price}</div>
+                  <button class="order-btn-small" style="background: ${color}; color: #0A1128;" 
+                          onclick="orderPackage('${vendorNames[vendorId]}', '${pkg.name}', '${pkg.price}', '${vendorWaLinks[vendorId]}')">
+                    <i class="bi bi-cart"></i> Pesan
+                  </button>
                 </div>
-                <div class="mt-2 small"><i class="bi bi-shield-check text-info"></i> Joki Trust-Meter: <strong>${v.tag === 'Verified' ? '100% Aman' : (v.guarantee ? 'Terpercaya' : 'Standar')}</strong></div>
               </div>
             </div>
-          `;
-        });
-        vendorContainer.innerHTML = html;
-        document.querySelectorAll('.orderBtn').forEach(btn => {
-          btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const waLink = btn.getAttribute('data-walink');
-            const vendorName = btn.getAttribute('data-vendor');
-            const catLabel = btn.getAttribute('data-cat');
-            let finalLink = waLink;
-            if(!finalLink.includes('text=')) {
-              finalLink += `?text=Halo%20saya%20dari%20JOKI.VEST%2C%20ingin%20order%20joki%20kategori%20${encodeURIComponent(catLabel)}%20di%20${encodeURIComponent(vendorName)}`;
-            }
-            window.open(finalLink, '_blank');
-            if(navigator.vibrate) navigator.vibrate(50);
-            showToast(`Membuka chat ${vendorName}...`);
-            saveRecentlyViewed(vendorName);
-          });
-        });
-      }, 300);
+          `).join('');
+        }
+      }
+      homePage.classList.add('hidden');
+      document.body.scrollTop = 0;
+    }
+
+    function closeVendorDetail() {
+      document.querySelectorAll('.vendor-detail-page').forEach(el => el.classList.remove('active'));
+      homePage.classList.remove('hidden');
+      document.body.scrollTop = 0;
+    }
+
+    function orderPackage(vendorName, packageName, price, waLink) {
+      const message = `Halo%20saya%20dari%20JOKI.VEST%2C%20ingin%20order%20paket%20${encodeURIComponent(packageName)}%20di%20${encodeURIComponent(vendorName)}%20dengan%20harga%20${encodeURIComponent(price)}`;
+      let finalLink = waLink;
+      if (!finalLink.includes('text=')) {
+        finalLink += `?text=${message}`;
+      }
+      window.open(finalLink, '_blank');
+      showToast(`Order ${packageName} di ${vendorName}...`);
+      if(navigator.vibrate) navigator.vibrate(30);
+    }
+
+    function orderVendor(vendorName, waLink) {
+      window.open(waLink, '_blank');
+      showToast(`Membuka chat ${vendorName}...`);
+    }
+
+    function consultVendor() {
+      const msg = "Halo%20admin%20JOKI.VEST%2C%20saya%20butuh%20bantuan%20memilih%20vendor%20joki";
+      window.open(`https://wa.me/6281312345678?text=${msg}`, '_blank');
+      showToast("Hubungi konsultan JOKI.VEST");
+    }
+
+    // Render vendors di home
+    const vendorsDB = {
+      rank: [
+        { id: 'takapedia', name: 'TAKAPEDIA', tag: 'Verified', price: 'Rp 10.000/Bintang', speed: 'Sangat Cepat (1-2 Hari)', rating: 4.9, review: 1200, color: '#FF6B35', icon: 'bi-fire' },
+        { id: 'acursio', name: 'ACURSIO', tag: 'Fast Response', price: 'Rp 8.500/Bintang', speed: 'Cepat (2-3 Hari)', rating: 4.7, review: 890, color: '#7B2FBE', icon: 'bi-lightning' },
+        { id: 'godlike', name: 'GODLIKE BOOST', tag: 'Pro Player', price: 'Rp 12.000/Bintang', speed: 'Express (12 Jam)', rating: 5.0, review: 450, color: '#FFD700', icon: 'bi-trophy' }
+      ],
+      savage: [
+        { id: 'savagemaster', name: 'SAVAGE MASTER', tag: 'Savage Specialist', price: 'Rp 250.000/Savage', speed: '1 Hari jadi', rating: 4.8, review: 340, color: '#E74C3C', icon: 'bi-sword' },
+        { id: 'goldlane', name: 'GOLD LANE ID', tag: 'MM Main', price: 'Rp 210.000/Savage', speed: 'Cepat (Sameday)', rating: 4.6, review: 210, color: '#F39C12', icon: 'bi-arrow-right-circle' }
+      ],
+      global: [
+        { id: 'supreme', name: 'SUPREME HUNTER', tag: 'Global Top', price: 'Rp 25.000/Point', speed: 'Prioritas Tinggi', rating: 4.95, review: 602, color: '#00CED1', icon: 'bi-crown' }
+      ],
+      gendong: [
+        { id: 'mythic', name: 'MYTHIC CARRIER', tag: 'Gendong Jago', price: 'Rp 35.000/Game', speed: 'Siap Mabar', rating: 4.85, review: 1100, color: '#2ECC71', icon: 'bi-people' }
+      ]
+    };
+
+    function renderVendors(category) {
+      let vendors = vendorsDB[category] || [];
+      if(vendors.length === 0) {
+        vendorContainer.innerHTML = `<div class="col-12 text-center py-5"><i class="bi bi-emoji-frown fs-1"></i><p class="mt-2">Maaf, kriteria joki belum tersedia.</p></div>`;
+        return;
+      }
+      let html = '';
+      vendors.forEach(v => {
+        let stars = '';
+        for(let i=0;i<Math.floor(v.rating);i++) stars += '<i class="bi bi-star-fill"></i>';
+        if(v.rating % 1 >= 0.5) stars += '<i class="bi bi-star-half"></i>';
+        html += `
+          <div class="col-12">
+            <div class="vendor-card p-3 p-md-4" style="border-color: ${v.color}44; background: linear-gradient(135deg, ${v.color}11 0%, #101935 100%);">
+              <div class="d-flex justify-content-between align-items-start flex-wrap">
+                <div>
+                  <h5 class="fw-bold mb-1" style="color:${v.color}">
+                    <i class="bi ${v.icon}"></i> ${v.name} 
+                    <span class="badge ms-2" style="background:${v.color}; color:#0A1128;">${v.tag}</span>
+                  </h5>
+                  <div class="small text-secondary">${v.speed}</div>
+                </div>
+                <div class="text-end">
+                  <div class="star-rating fs-6">${stars} ${v.rating}</div>
+                  <small>(${v.review} review)</small>
+                </div>
+              </div>
+              <hr class="bg-secondary" style="border-color:${v.color}33;">
+              <div class="row g-2 align-items-center">
+                <div class="col-7">
+                  <div class="fw-bold fs-5" style="color:${v.color}">${v.price}</div>
+                </div>
+                <div class="col-5 text-end">
+                  <button class="btn-start" style="background:${v.color}; color:#0A1128;" 
+                          onclick="showVendorDetail('${v.id}')">
+                    START <i class="bi bi-arrow-right-short"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      vendorContainer.innerHTML = html;
     }
 
     function setActiveCategory(category) {
       activeCategory = category;
       categoryPills.forEach(pill => {
-        if(pill.getAttribute('data-category') === category) {
-          pill.classList.add('active');
-        } else {
-          pill.classList.remove('active');
-        }
+        pill.classList.toggle('active', pill.getAttribute('data-category') === category);
       });
-      let catDisplayName = '';
-      if(category === 'rank') catDisplayName = 'Push Rank';
-      else if(category === 'savage') catDisplayName = 'Konten Savage';
-      else if(category === 'global') catDisplayName = 'Global/Supreme';
-      else catDisplayName = 'Gendong Mythic';
-      selectedCatLabel.innerText = `Menampilkan 3 vendor terbaik untuk ${catDisplayName}`;
+      let catDisplayName = { rank: 'Push Rank', savage: 'Konten Savage', global: 'Global/Supreme', gendong: 'Gendong Mythic' }[category] || '';
+      selectedCatLabel.innerText = `Menampilkan vendor untuk ${catDisplayName}`;
       renderVendors(category);
-      floatingBtnContainer.innerHTML = `<button class="btn btn-neon px-4 py-2 shadow" id="scrollToVendor"><i class="bi bi-binoculars"></i> Lihat 3 Rekomendasi</button>`;
-      const scrollBtn = document.getElementById('scrollToVendor');
-      if(scrollBtn) scrollBtn.addEventListener('click', () => {
-        document.getElementById('vendorSection').scrollIntoView({ behavior: 'smooth' });
-      });
     }
 
     categoryPills.forEach(pill => {
-      pill.addEventListener('click', (e) => {
+      pill.addEventListener('click', () => {
         const cat = pill.getAttribute('data-category');
         setActiveCategory(cat);
         localStorage.setItem('jokivest_last_category', cat);
         if(navigator.vibrate) navigator.vibrate(20);
-        // animasi transisi halus
-        showPageLoader();
-        setTimeout(() => hidePageLoader(), 400);
       });
     });
 
     const savedCat = localStorage.getItem('jokivest_last_category');
-    if(savedCat && vendorsDB[savedCat]) {
-      setActiveCategory(savedCat);
-    } else {
-      setActiveCategory('rank');
-    }
+    setActiveCategory(savedCat && vendorsDB[savedCat] ? savedCat : 'rank');
 
-    const waFab = document.getElementById('waFab');
-    waFab.addEventListener('click', () => {
-      const msg = "Halo%20admin%20JOKI.VEST%2C%20saya%20butuh%20bantuan%20memilih%20vendor%20joki%20atau%20middleman%20service";
-      window.open(`https://wa.me/628?text=${msg}`, '_blank');
+    // Floating WA
+    document.getElementById('waFab').addEventListener('click', () => {
+      window.open('https://wa.me/6281312345678?text=Halo%20admin%20JOKI.VEST%2C%20saya%20butuh%20bantuan', '_blank');
       showToast("Hubungi konsultan JOKI.VEST");
-      if(navigator.vibrate) navigator.vibrate(30);
     });
 
-    // Header background spot handler
-    const heroSpot = document.getElementById('heroBgSpot');
-    function checkBackgroundImage() {
-      const computedStyle = window.getComputedStyle(heroSpot);
-      const bgImg = computedStyle.backgroundImage;
-      if(bgImg && bgImg !== 'none' && bgImg !== 'url("")') {
-        heroSpot.classList.add('has-bg');
-      } else {
-        heroSpot.classList.remove('has-bg');
-      }
-    }
-    const observer = new MutationObserver(() => checkBackgroundImage());
-    observer.observe(heroSpot, { attributes: true, attributeFilter: ['style'] });
-    checkBackgroundImage();
+    // Profile
+    document.getElementById('profileBtn')?.addEventListener('click', () => {
+      showToast("👤 Profile: Fitur sedang dalam pengembangan");
+    });
 
-    // Service Worker Registration (PWA) - dengan fallback jika file tidak ditemukan
+    // Service Worker
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js')
-          .then(registration => {
-            console.log('Service Worker registered successfully:', registration.scope);
-          })
-          .catch(error => {
-            console.log('Service Worker registration failed:', error);
-            // SW tidak ditemukan, tapi aplikasi tetap berjalan
-          });
+          .then(() => console.log('SW registered!'))
+          .catch(err => console.log('SW failed:', err));
       });
     }
 
-    window.addEventListener('load', () => {
-      localStorage.setItem('jokivest_vendors_backup', JSON.stringify(vendorsDB));
-      if(!navigator.onLine){
-        showToast("Mode Offline: Menampilkan data terakhir yang tersimpan");
-      }
-      hidePageLoader();
-    });
-
-    // Add to Home Screen Prompt
+    // Install Prompt
     let deferredPrompt;
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       deferredPrompt = e;
-      // Tampilkan tombol install setelah 2 detik
       setTimeout(() => {
-        const installBtnDiv = document.createElement('div');
-        installBtnDiv.id = 'installPwaContainer';
-        installBtnDiv.className = 'position-fixed bottom-0 start-0 end-0 bg-dark p-2 text-center z-3';
-        installBtnDiv.style.zIndex = '1050';
-        installBtnDiv.style.bottom = '80px';
-        installBtnDiv.innerHTML = `<button class="btn btn-neon w-75" id="installPwaBtn">📲 Pasang Aplikasi JOKI.VEST</button>`;
-        document.body.appendChild(installBtnDiv);
+        const div = document.createElement('div');
+        div.id = 'installPwaContainer';
+        div.className = 'position-fixed bottom-0 start-0 end-0 bg-dark p-2 text-center z-3';
+        div.style.zIndex = '1050';
+        div.style.bottom = '80px';
+        div.innerHTML = `<button class="btn btn-neon w-75" id="installPwaBtn">📲 Pasang Aplikasi JOKI.VEST</button>`;
+        document.body.appendChild(div);
         document.getElementById('installPwaBtn')?.addEventListener('click', () => {
-          installBtnDiv.remove();
+          div.remove();
           deferredPrompt.prompt();
-          deferredPrompt.userChoice.then(() => deferredPrompt = null);
         });
       }, 2000);
     });
 
-    // Profile button alert (demo)
-    document.getElementById('profileBtn')?.addEventListener('click', () => {
-      showToast("👤 Profile: Fitur sedang dalam pengembangan");
-    });
+    hidePageLoader();
   </script>
 </body>
 
